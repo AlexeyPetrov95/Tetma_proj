@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA3367E81D3A016D0030D5A6 /* FallingNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3367E71D3A016D0030D5A6 /* FallingNumber.swift */; };
+		EA3367EA1D3A01B50030D5A6 /* InitialNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3367E91D3A01B50030D5A6 /* InitialNumber.swift */; };
+		EA3367EC1D3A01FD0030D5A6 /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3367EB1D3A01FD0030D5A6 /* SKNodeExtension.swift */; };
+		EA52D0501D3BD7D6005C1256 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA52D04F1D3BD7D6005C1256 /* Helper.swift */; };
+		EA5A64A51D40B4D500846F3E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5A64A71D40B4D500846F3E /* Localizable.strings */; };
+		EA5A64AA1D40B4D600846F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5A64AC1D40B4D600846F3E /* InfoPlist.strings */; };
+		EA5A64B01D40B4D700846F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5A64B21D40B4D700846F3E /* InfoPlist.strings */; };
+		EA5A64B51D40B4D700846F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5A64B71D40B4D700846F3E /* InfoPlist.strings */; };
+		EA6D94441D34C0BA00F8811B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94431D34C0BA00F8811B /* MenuScene.swift */; };
+		EA6D94461D34C2D300F8811B /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94451D34C2D300F8811B /* LevelScene.swift */; };
+		EA6D94481D34C5D200F8811B /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94471D34C5D200F8811B /* SettingsScene.swift */; };
+		EA6D944A1D34C6AD00F8811B /* BuyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94491D34C6AD00F8811B /* BuyScene.swift */; };
 		EAC7EFC71D2BA52F0047F202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFC61D2BA52F0047F202 /* AppDelegate.swift */; };
 		EAC7EFC91D2BA52F0047F202 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAC7EFC81D2BA52F0047F202 /* GameScene.sks */; };
 		EAC7EFCB1D2BA52F0047F202 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFCA1D2BA52F0047F202 /* GameScene.swift */; };
@@ -16,6 +28,9 @@
 		EAC7EFD51D2BA52F0047F202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC7EFD31D2BA52F0047F202 /* LaunchScreen.storyboard */; };
 		EAC7EFE01D2BA52F0047F202 /* numbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFDF1D2BA52F0047F202 /* numbersTests.swift */; };
 		EAC7EFEB1D2BA52F0047F202 /* numbersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFEA1D2BA52F0047F202 /* numbersUITests.swift */; };
+		EACAEE641D44C44C0046147A /* SKSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAEE631D44C44C0046147A /* SKSceneExtension.swift */; };
+		EACAEE681D45F9540046147A /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAEE671D45F9540046147A /* GeneralFunctions.swift */; };
+		EAFD67A91D3CB09700304FF6 /* GameNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD67A81D3CB09700304FF6 /* GameNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +51,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA3367E71D3A016D0030D5A6 /* FallingNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallingNumber.swift; sourceTree = "<group>"; };
+		EA3367E91D3A01B50030D5A6 /* InitialNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialNumber.swift; sourceTree = "<group>"; };
+		EA3367EB1D3A01FD0030D5A6 /* SKNodeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNodeExtension.swift; sourceTree = "<group>"; };
+		EA52D04F1D3BD7D6005C1256 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		EA5A64A21D40B4D500846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EA5A64A61D40B4D500846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA5A64AB1D40B4D600846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA5A64AD1D40B4D600846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		EA5A64B11D40B4D700846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA5A64B61D40B4D700846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA6D94431D34C0BA00F8811B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		EA6D94451D34C2D300F8811B /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
+		EA6D94471D34C5D200F8811B /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
+		EA6D94491D34C6AD00F8811B /* BuyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyScene.swift; sourceTree = "<group>"; };
 		EAC7EFC31D2BA52F0047F202 /* numbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = numbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC7EFC61D2BA52F0047F202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAC7EFC81D2BA52F0047F202 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -51,6 +80,9 @@
 		EAC7EFE61D2BA52F0047F202 /* numbersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = numbersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC7EFEA1D2BA52F0047F202 /* numbersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numbersUITests.swift; sourceTree = "<group>"; };
 		EAC7EFEC1D2BA52F0047F202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACAEE631D44C44C0046147A /* SKSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSceneExtension.swift; sourceTree = "<group>"; };
+		EACAEE671D45F9540046147A /* GeneralFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
+		EAFD67A81D3CB09700304FF6 /* GameNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +110,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3367E61D3A01590030D5A6 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				EA3367E71D3A016D0030D5A6 /* FallingNumber.swift */,
+				EA3367E91D3A01B50030D5A6 /* InitialNumber.swift */,
+				EA3367EB1D3A01FD0030D5A6 /* SKNodeExtension.swift */,
+				EA52D04F1D3BD7D6005C1256 /* Helper.swift */,
+				EACAEE631D44C44C0046147A /* SKSceneExtension.swift */,
+				EAFD67A81D3CB09700304FF6 /* GameNumber.swift */,
+			);
+			name = objects;
+			sourceTree = "<group>";
+		};
 		EAC7EFBA1D2BA52F0047F202 = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +146,18 @@
 		EAC7EFC51D2BA52F0047F202 /* numbers */ = {
 			isa = PBXGroup;
 			children = (
+				EA5A64B21D40B4D700846F3E /* InfoPlist.strings */,
+				EA5A64A71D40B4D500846F3E /* Localizable.strings */,
+				EA3367E61D3A01590030D5A6 /* objects */,
 				EAC7EFC61D2BA52F0047F202 /* AppDelegate.swift */,
 				EAC7EFC81D2BA52F0047F202 /* GameScene.sks */,
 				EAC7EFCA1D2BA52F0047F202 /* GameScene.swift */,
 				EAC7EFCC1D2BA52F0047F202 /* GameViewController.swift */,
+				EA6D94431D34C0BA00F8811B /* MenuScene.swift */,
+				EA6D94491D34C6AD00F8811B /* BuyScene.swift */,
+				EA6D94471D34C5D200F8811B /* SettingsScene.swift */,
+				EA6D94451D34C2D300F8811B /* LevelScene.swift */,
+				EACAEE671D45F9540046147A /* GeneralFunctions.swift */,
 				EAC7EFCE1D2BA52F0047F202 /* Main.storyboard */,
 				EAC7EFD11D2BA52F0047F202 /* Assets.xcassets */,
 				EAC7EFD31D2BA52F0047F202 /* LaunchScreen.storyboard */,
@@ -116,6 +169,7 @@
 		EAC7EFDE1D2BA52F0047F202 /* numbersTests */ = {
 			isa = PBXGroup;
 			children = (
+				EA5A64AC1D40B4D600846F3E /* InfoPlist.strings */,
 				EAC7EFDF1D2BA52F0047F202 /* numbersTests.swift */,
 				EAC7EFE11D2BA52F0047F202 /* Info.plist */,
 			);
@@ -125,6 +179,7 @@
 		EAC7EFE91D2BA52F0047F202 /* numbersUITests */ = {
 			isa = PBXGroup;
 			children = (
+				EA5A64B71D40B4D700846F3E /* InfoPlist.strings */,
 				EAC7EFEA1D2BA52F0047F202 /* numbersUITests.swift */,
 				EAC7EFEC1D2BA52F0047F202 /* Info.plist */,
 			);
@@ -194,21 +249,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Alexey Petrov";
 				TargetAttributes = {
 					EAC7EFC21D2BA52F0047F202 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7P33EZ7793;
+						LastSwiftMigration = 0800;
 					};
 					EAC7EFDA1D2BA52F0047F202 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7P33EZ7793;
+						LastSwiftMigration = 0800;
 						TestTargetID = EAC7EFC21D2BA52F0047F202;
 					};
 					EAC7EFE51D2BA52F0047F202 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7P33EZ7793;
+						LastSwiftMigration = 0800;
 						TestTargetID = EAC7EFC21D2BA52F0047F202;
 					};
 				};
@@ -238,6 +296,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5A64A51D40B4D500846F3E /* Localizable.strings in Resources */,
+				EA5A64B01D40B4D700846F3E /* InfoPlist.strings in Resources */,
 				EAC7EFC91D2BA52F0047F202 /* GameScene.sks in Resources */,
 				EAC7EFD51D2BA52F0047F202 /* LaunchScreen.storyboard in Resources */,
 				EAC7EFD21D2BA52F0047F202 /* Assets.xcassets in Resources */,
@@ -249,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5A64AA1D40B4D600846F3E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5A64B51D40B4D700846F3E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +328,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA52D0501D3BD7D6005C1256 /* Helper.swift in Sources */,
 				EAC7EFCB1D2BA52F0047F202 /* GameScene.swift in Sources */,
+				EAFD67A91D3CB09700304FF6 /* GameNumber.swift in Sources */,
 				EAC7EFCD1D2BA52F0047F202 /* GameViewController.swift in Sources */,
+				EA3367EA1D3A01B50030D5A6 /* InitialNumber.swift in Sources */,
+				EA3367EC1D3A01FD0030D5A6 /* SKNodeExtension.swift in Sources */,
+				EACAEE681D45F9540046147A /* GeneralFunctions.swift in Sources */,
 				EAC7EFC71D2BA52F0047F202 /* AppDelegate.swift in Sources */,
+				EA6D94481D34C5D200F8811B /* SettingsScene.swift in Sources */,
+				EA3367E81D3A016D0030D5A6 /* FallingNumber.swift in Sources */,
+				EA6D94461D34C2D300F8811B /* LevelScene.swift in Sources */,
+				EACAEE641D44C44C0046147A /* SKSceneExtension.swift in Sources */,
+				EA6D944A1D34C6AD00F8811B /* BuyScene.swift in Sources */,
+				EA6D94441D34C0BA00F8811B /* MenuScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,10 +377,43 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EA5A64A71D40B4D500846F3E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5A64A61D40B4D500846F3E /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		EA5A64AC1D40B4D600846F3E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5A64AB1D40B4D600846F3E /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA5A64B21D40B4D700846F3E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5A64B11D40B4D700846F3E /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA5A64B71D40B4D700846F3E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5A64B61D40B4D700846F3E /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		EAC7EFCE1D2BA52F0047F202 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EAC7EFCF1D2BA52F0047F202 /* Base */,
+				EA5A64AD1D40B4D600846F3E /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -316,6 +422,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EAC7EFD41D2BA52F0047F202 /* Base */,
+				EA5A64A21D40B4D500846F3E /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -416,6 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -427,6 +535,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -439,6 +549,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/numbers.app/numbers";
 			};
 			name = Debug;
@@ -451,6 +562,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/numbers.app/numbers";
 			};
 			name = Release;
@@ -463,6 +576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbersUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = numbers;
 			};
 			name = Debug;
@@ -474,6 +588,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbersUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = numbers;
 			};
 			name = Release;
@@ -497,6 +613,7 @@
 				EAC7EFF11D2BA52F0047F202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAC7EFF21D2BA52F0047F202 /* Build configuration list for PBXNativeTarget "numbersTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +622,7 @@
 				EAC7EFF41D2BA52F0047F202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAC7EFF51D2BA52F0047F202 /* Build configuration list for PBXNativeTarget "numbersUITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +631,7 @@
 				EAC7EFF71D2BA52F0047F202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
