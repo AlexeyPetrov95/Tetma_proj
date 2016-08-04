@@ -1,0 +1,47 @@
+/* about us button */
+"About us" = "à propos de nous";
+
+/* back button */
+"Back" = "Revenir en arrière";
+
+/* buy button */
+"Buy" = "Boutique";
+
+/* buy background button */
+"Buy background" = "Acheter un fond d'écran";
+
+/* buy only game button */
+"Buy only game" = "Supprimer la publicité";
+
+/* change background button */
+"Change background" = "Modifier le fond d'écran";
+
+/* easy mode button */
+"Easy" = "Facile";
+
+/* full package button */
+"Full package" = "Acheter la version complète";
+
+/* hard mode button */
+"Hard" = "Difficile";
+
+/* Kids's mode button */
+"Kid's mode" = "Pour les enfants";
+
+/* settings button */
+"Settings" = "Paramètres";
+
+/* start button */
+"Start" = "Jouer";
+
+/* Tutorial button */
+"Tutorial" = "Tutoriels";
+
+/* Main menu button */
+"Main menu" = "Menu principal";
+
+/* Resume button */
+"Resume" = "Continuer";
+
+/* Restart button */
+"Restart" = "Rejouer";

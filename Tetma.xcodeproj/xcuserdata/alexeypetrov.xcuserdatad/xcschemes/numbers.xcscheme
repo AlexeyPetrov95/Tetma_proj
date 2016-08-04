@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAC7EFC21D2BA52F0047F202"
-               BuildableName = "numbers.app"
-               BlueprintName = "numbers"
-               ReferencedContainer = "container:numbers.xcodeproj">
+               BuildableName = "Tetma.app"
+               BlueprintName = "Tetma"
+               ReferencedContainer = "container:Tetma.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAC7EFDA1D2BA52F0047F202"
-               BuildableName = "numbersTests.xctest"
-               BlueprintName = "numbersTests"
-               ReferencedContainer = "container:numbers.xcodeproj">
+               BuildableName = "TetmaTests.xctest"
+               BlueprintName = "TetmaTests"
+               ReferencedContainer = "container:Tetma.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAC7EFE51D2BA52F0047F202"
-               BuildableName = "numbersUITests.xctest"
-               BlueprintName = "numbersUITests"
-               ReferencedContainer = "container:numbers.xcodeproj">
+               BuildableName = "TetmaUITests.xctest"
+               BlueprintName = "TetmaUITests"
+               ReferencedContainer = "container:Tetma.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EAC7EFC21D2BA52F0047F202"
-            BuildableName = "numbers.app"
-            BlueprintName = "numbers"
-            ReferencedContainer = "container:numbers.xcodeproj">
+            BuildableName = "Tetma.app"
+            BlueprintName = "Tetma"
+            ReferencedContainer = "container:Tetma.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -70,15 +70,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      language = "ja">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EAC7EFC21D2BA52F0047F202"
-            BuildableName = "numbers.app"
-            BlueprintName = "numbers"
-            ReferencedContainer = "container:numbers.xcodeproj">
+            BuildableName = "Tetma.app"
+            BlueprintName = "Tetma"
+            ReferencedContainer = "container:Tetma.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EAC7EFC21D2BA52F0047F202"
-            BuildableName = "numbers.app"
-            BlueprintName = "numbers"
-            ReferencedContainer = "container:numbers.xcodeproj">
+            BuildableName = "Tetma.app"
+            BlueprintName = "Tetma"
+            ReferencedContainer = "container:Tetma.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

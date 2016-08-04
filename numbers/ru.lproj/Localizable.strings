@@ -5,41 +5,44 @@
 "Back" = "Назад";
 
 /* buy button */
-"Buy" = "Купить";
+"Buy" = "Покупки";
 
 /* buy background button */
 "Buy background" = "Купить фон";
 
 /* buy only game button */
-"Buy only game" = "Купить игру";
+"Buy only game" = "Убрать рекламу";
 
 /* change background button */
 "Change background" = "Изменть фон";
 
 /* easy mode button */
-"Easy" = "Просто";
+"Easy" = "Простой";
 
 /* full package button */
 "Full package" = "Полный пакет";
 
 /* hard mode button */
-"Hard" = "Тяжело";
+"Hard" = "Тяжелый";
 
 /* Kids's mode button */
-"Kids's mode" = "Детский";
-
-/* language background button */
-"Language" = "Языки";
+"Kid's mode" = "Для детей";
 
 /* settings button */
 "Settings" = "Настройки";
 
 /* start button */
-"Start" = "Начать";
-
-/* training button */
-"Training" = "Обучение";
+"Start" = "Играть";
 
 /* Tutorial button */
 "Tutorial" = "Обучение";
+
+/* Main menu button */
+"Main menu" = "Главное меню";
+
+/* Resume button */
+"Resume" = "Продолжить";
+
+/* Restart button */
+"Restart" = "Начать заново";
 

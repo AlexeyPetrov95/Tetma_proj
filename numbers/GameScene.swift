@@ -224,6 +224,7 @@ class GameScene: SKScene {
             } else {
                 let row = getRowByPosition(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
                 let currentNumber = getCurrentNumber(row: row)
+             //   print("CurrentNUmber: \(currentNumber)")
                 node = currentNumber.0
                 positionInArray = currentNumber.1
                 oldRow = currentNumber.2
@@ -247,16 +248,18 @@ class GameScene: SKScene {
         return (node, positionInArray, oldRow)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { // TODO:: reset
+   /* override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { // TODO:: reset
         if node != nil {
             let touch = touches.first!
             let location = touch.location(in: self)
             if node != nil   {
+                
                 let label = node.children[0] as! SKLabelNode
                 node.removeAllActions()
                 node.position.x = location.x
                 let remainingDistance = node.position.y - GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y
                 let time = Double(remainingDistance) / self.fallingSpeed
+                
                 let fallAction = SKAction.move(to: CGPoint(x: node.position.x, y: GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y), duration: time)
                 node.run(fallAction, completion: {
                     let newPosition = getNearestRow(self.node.position.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
@@ -269,19 +272,27 @@ class GameScene: SKScene {
                 });
             }
         }
+    }*/
+    
+    func cancelAnimation()  {
+        print ("!")
     }
     
     // TODO:: bug fix
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         if (node != nil) {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+         
             node.removeAllActions()
-            var newPosition = getNearestRow(node.position.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
+            var newPosition = getNearestRow(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
             var row = getRowByPosition(newPosition, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
-                  //    print ("Row: \(row)")
-            //var newPosition = getPositionByRow(row, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
+    
             let nodeOnCurrentRow = getCurrentNumber(row: row)
             if (nodeOnCurrentRow.0 != nil){
-                if (nodeOnCurrentRow.0!.position.y - node.position.y >= -20 && nodeOnCurrentRow.0!.position.y - node.position.y <= 20){
+                if (nodeOnCurrentRow.0!.position.y - node.position.y >= -30 && nodeOnCurrentRow.0!.position.y - node.position.y <= 30){
                     let newRow = oldRow - row
                     if newRow > 0 && row != self.countOfRow - 1{
                         row += 1
@@ -297,15 +308,25 @@ class GameScene: SKScene {
                     newPosition = getPositionByRow(row, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
                 }
             }
-            node.position.x = newPosition
-            GameScene.nextNumber[positionInArray].row = (row, newPosition)
-            let label = node.children[0] as! SKLabelNode
-            let value = node.getValue(label.text!)
-            print ("Position: \(newPosition), Row: \(row), Value: \(value))")
-            let remainingDistance = node.position.y - GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y
-            let time = Double(remainingDistance) / self.fallingSpeed
-            node.refreshFallingAnimation(row: (row, node.position.x), value: value, yPosition: node.position.y, time: time, scene: self)
-            node = nil
+           // node.position.x = newPosition
+            let speed = 500
+            let time = Double(abs(newPosition - node.position.x)) / Double(speed)
+            
+            let fallAction = SKAction.move(to: CGPoint(x: newPosition, y: node.position.y), duration: time)
+            
+            node.run(fallAction, completion: {
+                GameScene.nextNumber[self.positionInArray].row = (row, newPosition)
+                let label = self.node.children[0] as! SKLabelNode
+                let value = self.node.getValue(label.text!)
+                //  print ("Position: \(newPosition), Row: \(row), Value: \(value))")
+                let remainingDistance = self.node.position.y - GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y
+                let time = Double(remainingDistance) / self.fallingSpeed
+                self.node.refreshFallingAnimation(row: (row, self.node.position.x), value: value, yPosition: self.node.position.y, time: time, scene: self)
+                self.node = nil
+            });
+
+            
+          
         }
     }
 }

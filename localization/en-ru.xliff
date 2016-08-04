@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="numbers/Base.lproj/LaunchScreen.storyboard" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.0" build-num="8S174q"/>
+    </header>
+    <body/>
+  </file>
+  <file original="numbers/Base.lproj/Main.storyboard" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.0" build-num="8S174q"/>
+    </header>
+    <body/>
+  </file>
+  <file original="numbers/Info.plist" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.0" build-num="8S174q"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="numbers/Localizable.strings" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.0" build-num="8S174q"/>
+    </header>
+    <body>
+      <trans-unit id="About us">
+        <source>About us</source>
+        <target>О нас</target>
+        <note>about us button</note>
+      </trans-unit>
+      <trans-unit id="Back">
+        <source>Back</source>
+        <target>Назад</target>
+        <note>back button</note>
+      </trans-unit>
+      <trans-unit id="Buy">
+        <source>Buy</source>
+        <target>Купить</target>
+        <note>buy button</note>
+      </trans-unit>
+      <trans-unit id="Buy background">
+        <source>Buy background</source>
+        <target>Купить фон</target>
+        <note>buy background button</note>
+      </trans-unit>
+      <trans-unit id="Buy only game">
+        <source>Buy only game</source>
+        <target>Купить игру</target>
+        <note>buy only game button</note>
+      </trans-unit>
+      <trans-unit id="Change background">
+        <source>Change background</source>
+        <target>Изменть фон</target>
+        <note>change background button</note>
+      </trans-unit>
+      <trans-unit id="Easy">
+        <source>Easy</source>
+        <target>Просто</target>
+        <note>easy mode button</note>
+      </trans-unit>
+      <trans-unit id="Full package">
+        <source>Full package</source>
+        <target>Полный пакет</target>
+        <note>full package button</note>
+      </trans-unit>
+      <trans-unit id="Hard">
+        <source>Hard</source>
+        <target>Тяжело</target>
+        <note>hard mode button</note>
+      </trans-unit>
+      <trans-unit id="Kids's mode">
+        <source>Kids's mode</source>
+        <target>Детский</target>
+        <note>Kids's mode button</note>
+      </trans-unit>
+      <trans-unit id="Language">
+        <source>Language</source>
+        <target>Языки</target>
+        <note>language background button</note>
+      </trans-unit>
+      <trans-unit id="Settings">
+        <source>Settings</source>
+        <target>Настройки</target>
+        <note>settings button</note>
+      </trans-unit>
+      <trans-unit id="Start">
+        <source>Start</source>
+        <target>Начать</target>
+        <note>start button</note>
+      </trans-unit>
+      <trans-unit id="Training">
+        <source>Training</source>
+        <target>Обучение</target>
+        <note>training button</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="numbersTests/Info.plist" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.0" build-num="8S174q"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="numbersUITests/Info.plist" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.0" build-num="8S174q"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

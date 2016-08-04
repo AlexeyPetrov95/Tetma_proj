@@ -1,0 +1,48 @@
+/* about us button */
+"About us" = "について";
+
+/* back button */
+"Back" = "バック";
+
+/* buy button */
+"Buy" = "購入";
+
+/* buy background button */
+"Buy background" = "背景を買う";
+
+/* buy only game button */
+"Buy only game" = "広告を削除 ";
+
+/* change background button */
+"Change background" = "背景を変える";
+
+/* easy mode button */
+"Easy" = "容易";
+
+/* full package button */
+"Full package" = "完全版を買う";
+
+/* hard mode button */
+"Hard" = "難しい";
+
+/* Kids's mode button */
+"Kid's mode" = "子供のための";
+
+/* settings button */
+"Settings" = "設定";
+
+/* start button */
+"Start" = "ゲームスタート";
+
+/* Tutorial button */
+"Tutorial" = "トレーニング";
+
+/* Main menu button */
+"Main menu" = "メインメニュー";
+
+/* Resume button */
+"Resume" = "続ける";
+
+/* Restart button */
+"Restart" = "再起動";
+
