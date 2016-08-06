@@ -308,13 +308,24 @@ class GameScene: SKScene {
                     newPosition = getPositionByRow(row, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
                 }
             }
-           // node.position.x = newPosition
-            let speed = 500
-            let time = Double(abs(newPosition - node.position.x)) / Double(speed)
+            node.position.x = newPosition
+            GameScene.nextNumber[self.positionInArray].row = (row, newPosition)
+            let label = self.node.children[0] as! SKLabelNode
+            let value = self.node.getValue(label.text!)
+            //  print ("Position: \(newPosition), Row: \(row), Value: \(value))")
+            let remainingDistance = self.node.position.y - GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y
+            let time = Double(remainingDistance) / self.fallingSpeed
+            self.node.refreshFallingAnimation(row: (row, self.node.position.x), value: value, yPosition: self.node.position.y, time: time, scene: self)
+            self.node = nil
             
-            let fallAction = SKAction.move(to: CGPoint(x: newPosition, y: node.position.y), duration: time)
             
-            node.run(fallAction, completion: {
+            
+           // let speed = 500
+           // let time = Double(abs(newPosition - node.position.x)) / Double(speed)
+            
+           // let fallAction = SKAction.move(to: CGPoint(x: newPosition, y: node.position.y), duration: time)
+            
+            /*node.run(fallAction, completion: {
                 GameScene.nextNumber[self.positionInArray].row = (row, newPosition)
                 let label = self.node.children[0] as! SKLabelNode
                 let value = self.node.getValue(label.text!)
@@ -323,7 +334,7 @@ class GameScene: SKScene {
                 let time = Double(remainingDistance) / self.fallingSpeed
                 self.node.refreshFallingAnimation(row: (row, self.node.position.x), value: value, yPosition: self.node.position.y, time: time, scene: self)
                 self.node = nil
-            });
+            });*/
 
             
           
