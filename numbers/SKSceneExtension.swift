@@ -28,6 +28,7 @@ extension SKScene {
             yPosition = button.position.y - button.frame.height - 10
             
             button.addChild(labelForButton)
+        
             self.addChild(button)
         }
     }

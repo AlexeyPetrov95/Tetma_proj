@@ -3,6 +3,7 @@ import SpriteKit
 class GameNumber {
     
     var start = false
+    var catching = false
     var value = 0
     let maxValue = 10
     let minValue = -10

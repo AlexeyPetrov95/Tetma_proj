@@ -35,6 +35,7 @@ func startNextNumber(scene: GameScene ) -> Bool{
 }
 
 func getRowByPosition (_ position: CGFloat, sizeForEachVerticalRow: CGFloat) -> Int {
+    print(Int(position / sizeForEachVerticalRow))
     return Int(position / sizeForEachVerticalRow)
 }
 
@@ -44,11 +45,11 @@ func getPositionByRow (_ row:Int, sizeForEachVerticalRow: CGFloat) -> CGFloat {
 }
 
 
-func getNearestRow (_ position: CGFloat, sizeForEachVerticalRow: CGFloat, countOfRow: Int) -> CGFloat {
+func getNearestRowLocation (_ position: CGFloat, sizeForEachVerticalRow: CGFloat, countOfRow: Int) -> CGFloat {
     var rowPosition:CGFloat = 0
     var diff:CGFloat = CGFloat.greatestFiniteMagnitude
     for i in 0..<countOfRow {
-        if abs(position - (CGFloat(i) * sizeForEachVerticalRow +  sizeForEachVerticalRow / 2)) < diff {  // условие
+        if abs(position - (CGFloat(i) * sizeForEachVerticalRow + sizeForEachVerticalRow / 2)) < diff {  // условие
             diff = abs(position - (CGFloat(i) * sizeForEachVerticalRow +  sizeForEachVerticalRow / 2))
             rowPosition = CGFloat(i) * sizeForEachVerticalRow + sizeForEachVerticalRow / 2
         }

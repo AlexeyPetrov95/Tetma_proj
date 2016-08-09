@@ -1,7 +1,8 @@
 import SpriteKit
-import ObjectiveC
+import AVFoundation
 
-class GameScene: SKScene {
+
+class GameScene: SKScene, AVAudioPlayerDelegate {
     
     static var arrayOfStartNumbers = [InitailNumbers]()
     static var nextNumber = [GameNumber]()
@@ -17,10 +18,12 @@ class GameScene: SKScene {
     var timerForHelp: Int = 0
     let sizeForEachHorizontalRow: CGFloat = 48
     var helpIsActive: Bool = false
+    var player = AVAudioPlayer()
+    
+    
     
     init(size: CGSize, countOfFallingNumbers: Int, fallingSpeed: Double, interval: Int, countOfRow: Int, level: String, timerForHelp: Int) {
         super.init(size: size)
-        
         self.isPaused = false
         self.sizeForEachVerticalRow = self.frame.width / CGFloat(countOfRow)
         self.helpIsActive = false
@@ -55,12 +58,17 @@ class GameScene: SKScene {
     let menu = SKSpriteNode()
     let nextNumber = SKLabelNode()
     let finallyGameStatus = SKLabelNode()
-   
+    let sndButtonClick = SKAction.playSoundFileNamed("menu_click.wav", waitForCompletion: false)
+    let intro = SKAction.playSoundFileNamed("intro+repeat.wav", waitForCompletion: true)
+
+  //  let audio =  SKTAudio.sharedInstance()
+    
+    
     let arrayOfValues = ["Main menu", "Resume", "Restart"]
     
     override func didMove(to view: SKView) {
         
-        let backgroundNode = SKSpriteNode(imageNamed: "background_default")
+        let backgroundNode = SKSpriteNode(imageNamed: "background")
         backgroundNode.size = self.frame.size
         backgroundNode.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         backgroundNode.zPosition = 0
@@ -99,9 +107,14 @@ class GameScene: SKScene {
         GameScene.nextNumber[0].start(self)
         GameScene.nextNumber[0].start = true
         
+        
+        
         self.addChild(nextNumberShape)
         self.addChild(pause)
         self.addChild(backgroundNode)
+        
+      
+        playSound()
     }
     
     func generateDefaultNumbers () {
@@ -182,6 +195,8 @@ class GameScene: SKScene {
     }
     
     func gameOver () {
+        player.pause()
+        self.addChild(menu)
         createMenuInScene(["Restart", "Main menu"], zPosition: 501)
         finallyGameStatus.text = "GAME OVER"
         self.isPaused = true
@@ -189,11 +204,12 @@ class GameScene: SKScene {
     
     func hideMenu () {
         self.deleteMenuFromScene(arrayOfValues)
+        player.play()
         self.menu.removeFromParent()
     }
     
     /**************** here touches function ****************/
-    var node: SKNode! = nil
+    var node: GameNumber! = nil
     var positionInArray: Int = 0
     var oldRow:Int = 0
     
@@ -204,36 +220,100 @@ class GameScene: SKScene {
             let touchedNode = self.atPoint(location)
             
             if touchedNode.name == "pause" {
+                player.pause()
                 self.getMenu()
                 self.isPaused = true
             } else if touchedNode.name == "Main menu_button" || touchedNode.name == "Main menu_label" {
-                let scene = MenuScene(size: self.size)
-                let skView = self.view! as SKView
-                scene.size = skView.bounds.size
-                scene.scaleMode = .aspectFill
-                skView.presentScene(scene)
-            } else if touchedNode.name == "Resume_button" || touchedNode.name == "Resume_label" {
-                self.hideMenu()
                 self.isPaused = false
+                let btn = self.childNode(withName: "Main menu_button")
+                btn!.run(sndButtonClick, completion: {
+                    let scene = MenuScene(size: self.size)
+                    let skView = self.view! as SKView
+                    scene.size = skView.bounds.size
+                    scene.scaleMode = .aspectFill
+                    skView.presentScene(scene)
+                })
+            } else if touchedNode.name == "Resume_button" || touchedNode.name == "Resume_label" {
+                self.isPaused = false
+                let btn = self.childNode(withName: "Resume_button")
+                btn!.run(sndButtonClick, completion: {
+                    self.hideMenu()
+                    self.isPaused = false
+                })
             } else if touchedNode.name == "Restart_button" || touchedNode.name == "Restart_label" {
-                let scene = GameScene(size: self.size, countOfFallingNumbers: self.countOfFallingNumbers, fallingSpeed: self.fallingSpeed, interval: self.interval, countOfRow:self.countOfRow,  level: self.level, timerForHelp: self.timerForHelp)
-                let skView = self.view! as SKView
-                scene.size = skView.bounds.size
-                scene.scaleMode = .aspectFill
-                skView.presentScene(scene)
+                self.isPaused = false
+                let btn = self.childNode(withName: "Restart_button")
+                btn!.run(sndButtonClick, completion: {
+                    let scene = GameScene(size: self.size, countOfFallingNumbers: self.countOfFallingNumbers, fallingSpeed: self.fallingSpeed, interval: self.interval, countOfRow:self.countOfRow,  level: self.level, timerForHelp: self.timerForHelp)
+                    let skView = self.view! as SKView
+                    scene.size = skView.bounds.size
+                    scene.scaleMode = .aspectFill
+                    skView.presentScene(scene)
+                })
+           
             } else {
                 let row = getRowByPosition(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
-                let currentNumber = getCurrentNumber(row: row)
-             //   print("CurrentNUmber: \(currentNumber)")
-                node = currentNumber.0
-                positionInArray = currentNumber.1
-                oldRow = currentNumber.2
+                if let check = getNumberOnRow(row: row) {
+                    node = check
+                    node.catching = true
+                }
             }
         }
     }
     
-    func getCurrentNumber(row: Int) -> (SKNode?, Int, Int) {
-        var maxPosition = self.frame.height
+    
+     func getNumberOnRow(row: Int) -> GameNumber? {
+        var node: GameNumber? = nil
+        var maxPosition = CGFloat(Int.max)
+        for i in 0..<GameScene.nextNumber.count {
+            if GameScene.nextNumber[i].start && GameScene.nextNumber[i].row.0 == row && GameScene.nextNumber[i].node.position.y < maxPosition {
+                maxPosition = GameScene.nextNumber[i].node.position.y
+                node = GameScene.nextNumber[i]
+            }
+        }
+        return node
+    }
+    
+    /*   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if node != nil {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+            let newPosition = getNearestRowLocation(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
+            let action = SKAction.moveTo(x: newPosition, duration: 0.1)
+            node.node.run(action)
+            //node = nil
+        }
+    }*/
+    
+    func findCatchingNumber () -> Int {
+        for i in 0..<GameScene.nextNumber.count {
+            if GameScene.nextNumber[i].catching {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if node != nil {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+            let newPosition = getNearestRowLocation(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
+            let newRow = getRowByPosition(newPosition, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
+            let action = SKAction.moveTo(x: newPosition, duration: 0.1)
+            
+            node.node.run(action, completion: {
+                self.position.x = newPosition
+                let number = self.findCatchingNumber()
+                GameScene.nextNumber[number].row = (newRow, newPosition)
+                GameScene.nextNumber[number].catching = false
+                self.node = nil
+            })
+        }
+    }
+    
+ /*  func getCurrentNumber(row: Int) -> (SKNode?, Int, Int) {
+        var maxPosition = self.frame.height * 2
         var positionInArray = 0
         var node: SKNode? = nil
         var oldRow: Int = 0
@@ -248,7 +328,7 @@ class GameScene: SKScene {
         return (node, positionInArray, oldRow)
     }
     
-   /* override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { // TODO:: reset
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { // TODO:: reset
         if node != nil {
             let touch = touches.first!
             let location = touch.location(in: self)
@@ -256,13 +336,20 @@ class GameScene: SKScene {
                 
                 let label = node.children[0] as! SKLabelNode
                 node.removeAllActions()
+                
+                
+                //let changeRowAnimation  = SKAction.move(to: CGPoint(x: location.x, y: node.position.y), duration: 50)
+                //node.run(changeRowAnimation)
                 node.position.x = location.x
+                
                 let remainingDistance = node.position.y - GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y
                 let time = Double(remainingDistance) / self.fallingSpeed
                 
+                
                 let fallAction = SKAction.move(to: CGPoint(x: node.position.x, y: GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y), duration: time)
+                
                 node.run(fallAction, completion: {
-                    let newPosition = getNearestRow(self.node.position.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
+                    let newPosition = getNearestRow(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
                     let newRow = getRowByPosition(self.node.position.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
                     self.node.position.x = newPosition
                     GameScene.nextNumber[self.positionInArray].row = (newRow, newPosition)
@@ -272,7 +359,7 @@ class GameScene: SKScene {
                 });
             }
         }
-    }*/
+    }
     
     func cancelAnimation()  {
         print ("!")
@@ -283,6 +370,7 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if (node != nil) {
+            
             let touch = touches.first!
             let location = touch.location(in: self)
          
@@ -317,27 +405,51 @@ class GameScene: SKScene {
             let time = Double(remainingDistance) / self.fallingSpeed
             self.node.refreshFallingAnimation(row: (row, self.node.position.x), value: value, yPosition: self.node.position.y, time: time, scene: self)
             self.node = nil
-            
-            
-            
-           // let speed = 500
-           // let time = Double(abs(newPosition - node.position.x)) / Double(speed)
-            
-           // let fallAction = SKAction.move(to: CGPoint(x: newPosition, y: node.position.y), duration: time)
-            
-            /*node.run(fallAction, completion: {
-                GameScene.nextNumber[self.positionInArray].row = (row, newPosition)
-                let label = self.node.children[0] as! SKLabelNode
-                let value = self.node.getValue(label.text!)
-                //  print ("Position: \(newPosition), Row: \(row), Value: \(value))")
-                let remainingDistance = self.node.position.y - GameScene.arrayOfStartNumbers[0].secondLabelShape.position.y
-                let time = Double(remainingDistance) / self.fallingSpeed
-                self.node.refreshFallingAnimation(row: (row, self.node.position.x), value: value, yPosition: self.node.position.y, time: time, scene: self)
-                self.node = nil
-            });*/
-
-            
-          
+        
+        }
+    } */
+    
+    
+    
+    
+    // **** sound ****
+    
+    func playSound (){
+        let url = Bundle.main.urlForResource("intro+repeat.wav", withExtension: nil)
+        var error: NSError? = nil
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+        } catch let error1 as NSError {
+            error = error1
+        }
+        if (error == nil) {
+            player.delegate = self
+            player.numberOfLoops = 0
+            player.prepareToPlay()
+            player.play()
+        } else {
+            print("Could not create audio player: \(error!)")
+        }
+        
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        if flag {
+            let url = Bundle.main.urlForResource("repeat.wav", withExtension: nil)
+            var error: NSError? = nil
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url!)
+            } catch let error1 as NSError {
+                error = error1
+            }
+            if (error == nil) {
+                self.player.delegate = self
+                self.player.numberOfLoops = -1
+                self.player.prepareToPlay()
+                self.player.play()
+            } else {
+                print("Could not create audio player: \(error!)")
+            }
         }
     }
 }
