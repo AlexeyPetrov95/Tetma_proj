@@ -9,7 +9,7 @@ class Helper: GameNumber {
         self.rightRow.0 = self.getRowFotNextCorrectNumber(countOfRow: scene.countOfRow)
         self.value = self.getNextCorrectValue(prevNumber: prevNumber)
         self.row = setRandomRow(scene.sizeForEachVerticalRow)
-        
+        self.label.fontName = "Helvetica-Bold"
         self.label.text = String(self.value)
         self.node.position = CGPoint(x: self.row.1, y: scene.frame.height)
         self.label.text = String(self.value)
@@ -38,15 +38,16 @@ class Helper: GameNumber {
     }
     
     func getNextCorrectValue (prevNumber: (Int, Int)) -> Int {
-    
+        
+        
+        if self.rightRow.0 == -1 {
+            return 0
+        }
+        
         let firstValue = GameScene.arrayOfStartNumbers[self.rightRow.0].firstRowNumber
         let secondValue = GameScene.arrayOfStartNumbers[self.rightRow.0].secondRowNumber
         
         var difference = 0
-        
-        if self.rightRow.0 == -1 {
-            return difference
-        }
         
         if prevNumber.0 != -1 {
             if ((firstValue - secondValue) >= -5 && (firstValue - secondValue) <= 5) && prevNumber.0 != self.rightRow.0 {

@@ -7,6 +7,7 @@ class FallingNumber: GameNumber {
         self.value = minValue + Int(arc4random_uniform(UInt32(maxValue - minValue + 1)))
         self.row = setRandomRow(scene.sizeForEachVerticalRow)
         self.label.text = String(self.value)
+        self.label.fontName = "Helvetica-Bold"
         self.node.position = CGPoint(x: self.row.1, y: scene.frame.height)
         self.label.text = String(self.value)
         self.label.position = CGPoint(x: 0 , y: 0 - self.label.frame.height / 2)

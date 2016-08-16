@@ -2,4 +2,225 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numbers/SettingsScene.swift"
+            timestampString = "492777512.090673"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "touchesBegan(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numbers/MenuScene.swift"
+            timestampString = "492851559.110389"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tetma.StripeAnimation.__deallocating_deinit"
+                  moduleName = "Tetma"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexeypetrov/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/numbers/numbers/MenuScene.swift"
+                  timestampString = "492778347.457473"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "9">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tetma.StripeAnimation.deinit"
+                  moduleName = "Tetma"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexeypetrov/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/numbers/numbers/MenuScene.swift"
+                  timestampString = "492778347.461043"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "9">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numbers/GameScene.swift"
+            timestampString = "492856845.123083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "touchesEnded(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numbers/GameScene.swift"
+            timestampString = "492856845.123083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "touchesEnded(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numbers/BuyScene.swift"
+            timestampString = "492862549.191352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "BuyScene"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tetma.BuyScene.skView.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SKView&gt;"
+                  moduleName = "Tetma"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexeypetrov/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/numbers/numbers/BuyScene.swift"
+                  timestampString = "492862550.352644"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "38">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tetma.BuyScene.skView.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.SKView&gt;"
+                  moduleName = "Tetma"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexeypetrov/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/numbers/numbers/BuyScene.swift"
+                  timestampString = "492862550.354959"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tetma.BuyScene.init (size : __C.CGSize) -&gt; Tetma.BuyScene"
+                  moduleName = "Tetma"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexeypetrov/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/numbers/numbers/BuyScene.swift"
+                  timestampString = "492862550.357702"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tetma.BuyScene.init () -&gt; Tetma.BuyScene"
+                  moduleName = "Tetma"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexeypetrov/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/numbers/numbers/BuyScene.swift"
+                  timestampString = "492862550.360646"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tetma.BuyScene.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Tetma.BuyScene&gt;"
+                  moduleName = "Tetma"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexeypetrov/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/numbers/numbers/BuyScene.swift"
+                  timestampString = "492862550.362751"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numbers/BuyScene.swift"
+            timestampString = "492951952.940218"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "RestorePurchases()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numbers/BuyScene.swift"
+            timestampString = "492954327.293785"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "paymentQueue(_:updatedTransactions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

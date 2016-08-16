@@ -1,5 +1,7 @@
 import SpriteKit
 
+let sndButtonClick = SKAction.playSoundFileNamed("menu_click.wav", waitForCompletion: false)
+
 func randomInt(_ min: Int, max: Int) -> Int {
     return min + Int(arc4random_uniform(UInt32(max - min + 1)))
 }
@@ -35,7 +37,6 @@ func startNextNumber(scene: GameScene ) -> Bool{
 }
 
 func getRowByPosition (_ position: CGFloat, sizeForEachVerticalRow: CGFloat) -> Int {
-    print(Int(position / sizeForEachVerticalRow))
     return Int(position / sizeForEachVerticalRow)
 }
 
@@ -56,3 +57,18 @@ func getNearestRowLocation (_ position: CGFloat, sizeForEachVerticalRow: CGFloat
     }
     return rowPosition
 }
+
+func presentNewScene (_ scene: SKScene, skView: SKView, button: SKNode) {
+    scene.size = skView.bounds.size
+    scene.scaleMode = .aspectFill
+    if GameViewController.sound  {
+        button.run(sndButtonClick, completion: {
+            skView.presentScene(scene)
+        })
+    } else {
+        skView.presentScene(scene)
+    }
+}
+
+
+

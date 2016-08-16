@@ -24,10 +24,10 @@ class InitailNumbers {
         self.secondLabel.text = String(self.secondRowNumber)
         
         self.sizeForEachVerticalRow = scene.sizeForEachVerticalRow
-        self.sizeForEachHorizontalRow = scene.sizeForEachVerticalRow
+        self.sizeForEachHorizontalRow = scene.sizeForEachHorizontalRow
         
-        self.firtsLabelShape.position = CGPoint(x: x, y: sizeForEachHorizontalRow / 2)
-        self.secondLabelShape.position = CGPoint(x: x, y: sizeForEachHorizontalRow  + 25 )
+        self.firtsLabelShape.position = CGPoint(x: x, y: sizeForEachVerticalRow / 4)
+        self.secondLabelShape.position = CGPoint(x: x, y: sizeForEachVerticalRow)
     
     
         self.firstLabel.horizontalAlignmentMode = .center
@@ -35,9 +35,16 @@ class InitailNumbers {
         self.secondLabel.horizontalAlignmentMode = .center
         self.secondLabel.verticalAlignmentMode = .center
         
-        self.secondLabelShape.path = UIBezierPath(roundedRect: CGRect(x: -sizeForEachVerticalRow / 2 + 2.5, y: -sizeForEachVerticalRow / 2, width: sizeForEachVerticalRow - 5, height: sizeForEachVerticalRow), cornerRadius: CGFloat(sizeForEachVerticalRow / 2)).cgPath
+        //self.secondLabelShape.path = UIBezierPath(roundedRect: CGRect(x: -sizeForEachVerticalRow / 2 + 2.5, y: -sizeForEachVerticalRow / 2, width: sizeForEachVerticalRow - 5, height: sizeForEachVerticalRow), cornerRadius: CGFloat(sizeForEachVerticalRow / 2)).cgPath
         
-    
+        self.secondLabelShape.path = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: sizeForEachVerticalRow / 2 - 2.5, startAngle: CGFloat(0), endAngle: CGFloat(-M_PI), clockwise: false).cgPath
+        
+        self.firstLabel.fontColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+        self.secondLabel.fontColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+        
+        self.firstLabel.fontName = "Helvetica-Bold"
+        self.secondLabel.fontName = "Helvetica-Bold"
+        
         self.firtsLabelShape.zPosition = 3
         self.secondLabelShape.zPosition = 3
         self.firstLabel.zPosition = 5
@@ -78,19 +85,31 @@ class InitailNumbers {
         }
     }
     
+    let sound = SKAction.playSoundFileNamed("numbers.wav", waitForCompletion: false)
+    
     func refreshValue (_ fallingNumber: Int, scene: GameScene) {
         self.secondRowNumber += fallingNumber
         self.secondLabel.text = String(self.secondRowNumber)
         if self.secondRowNumber > 15 || self.secondRowNumber < -15 {
+            scene.over = true
             scene.gameOver()
         } else if (self.secondRowNumber == self.firstRowNumber ){
-            self.secondLabelShape.path = UIBezierPath(rect: CGRect(x: -sizeForEachVerticalRow / 2 + 2.5, y: -sizeForEachVerticalRow / 2, width: sizeForEachVerticalRow - 5, height: sizeForEachVerticalRow)).cgPath
+            if GameViewController.sound {
+                scene.run(sound)
+            }
+            self.secondLabelShape.path = UIBezierPath(rect: CGRect(x: -sizeForEachVerticalRow / 2 + 2.5, y: -sizeForEachVerticalRow / 2, width: sizeForEachVerticalRow - 5, height: sizeForEachVerticalRow / 2)).cgPath
+            
         } else if (self.secondRowNumber != self.firstRowNumber ){
-            self.secondLabelShape.path = UIBezierPath(roundedRect: CGRect(x: -sizeForEachVerticalRow / 2 + 2.5, y: -sizeForEachVerticalRow / 2, width: sizeForEachVerticalRow - 5, height: sizeForEachVerticalRow), cornerRadius: CGFloat(sizeForEachVerticalRow / 2)).cgPath
+            self.secondLabelShape.path = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: sizeForEachVerticalRow / 2 - 2.5, startAngle: CGFloat(0), endAngle: CGFloat(-M_PI), clockwise: false).cgPath
         }
         
         if victory() {
+            if GameViewController.sound {
+                scene.run(sound)
+            }
+            scene.over = true
             scene.gameOver()
+            
         }
     }
 }

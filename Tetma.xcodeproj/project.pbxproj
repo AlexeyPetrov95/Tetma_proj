@@ -25,6 +25,9 @@
 		EA6D94461D34C2D300F8811B /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94451D34C2D300F8811B /* LevelScene.swift */; };
 		EA6D94481D34C5D200F8811B /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94471D34C5D200F8811B /* SettingsScene.swift */; };
 		EA6D944A1D34C6AD00F8811B /* BuyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94491D34C6AD00F8811B /* BuyScene.swift */; };
+		EA7A220D1D5CA1050062B849 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA7A220C1D5CA1050062B849 /* GoogleService-Info.plist */; };
+		EA89F9461D5F335200356FC1 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA551A9D1D5E365E004CAA9C /* GoogleMobileAds.framework */; };
+		EA89F94B1D6074BA00356FC1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA89F94A1D6074BA00356FC1 /* StoreKit.framework */; };
 		EABE82831D5763E1009CA1BC /* menu_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = EABE82821D5763E1009CA1BC /* menu_click.wav */; };
 		EABE82891D57720B009CA1BC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABE82881D57720B009CA1BC /* AudioPlayer.swift */; };
 		EAC7EFC71D2BA52F0047F202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFC61D2BA52F0047F202 /* AppDelegate.swift */; };
@@ -71,6 +74,7 @@
 		EA3367E91D3A01B50030D5A6 /* InitialNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialNumber.swift; sourceTree = "<group>"; };
 		EA3367EB1D3A01FD0030D5A6 /* SKNodeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNodeExtension.swift; sourceTree = "<group>"; };
 		EA52D04F1D3BD7D6005C1256 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		EA551A9D1D5E365E004CAA9C /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		EA5A64A21D40B4D500846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EA5A64A61D40B4D500846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA5A64AB1D40B4D600846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		EA6D94451D34C2D300F8811B /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		EA6D94471D34C5D200F8811B /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		EA6D94491D34C6AD00F8811B /* BuyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyScene.swift; sourceTree = "<group>"; };
+		EA7A220C1D5CA1050062B849 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA89F94A1D6074BA00356FC1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EAB5C5441D537F1600920801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EAB5C5451D537F1700920801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EAB5C5461D537F1700920801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA89F9461D5F335200356FC1 /* GoogleMobileAds.framework in Frameworks */,
+				EA89F94B1D6074BA00356FC1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +182,14 @@
 			name = objects;
 			sourceTree = "<group>";
 		};
+		EA89F9471D60749300356FC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA89F94A1D6074BA00356FC1 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EABE82811D5763D0009CA1BC /* sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,10 +209,12 @@
 		EAC7EFBA1D2BA52F0047F202 = {
 			isa = PBXGroup;
 			children = (
+				EA551A9D1D5E365E004CAA9C /* GoogleMobileAds.framework */,
 				EAC7EFC51D2BA52F0047F202 /* numbers */,
 				EAC7EFDE1D2BA52F0047F202 /* numbersTests */,
 				EAC7EFE91D2BA52F0047F202 /* numbersUITests */,
 				EAC7EFC41D2BA52F0047F202 /* Products */,
+				EA89F9471D60749300356FC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +248,7 @@
 				EAC7EFD11D2BA52F0047F202 /* Assets.xcassets */,
 				EAC7EFD31D2BA52F0047F202 /* LaunchScreen.storyboard */,
 				EAC7EFD61D2BA52F0047F202 /* Info.plist */,
+				EA7A220C1D5CA1050062B849 /* GoogleService-Info.plist */,
 			);
 			path = numbers;
 			sourceTree = "<group>";
@@ -278,9 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAC7EFF21D2BA52F0047F202 /* Build configuration list for PBXNativeTarget "TetmaTests" */;
 			buildPhases = (
+				247A040CFB4710322B0C6A9C /* [CP] Check Pods Manifest.lock */,
 				EAC7EFD71D2BA52F0047F202 /* Sources */,
 				EAC7EFD81D2BA52F0047F202 /* Frameworks */,
 				EAC7EFD91D2BA52F0047F202 /* Resources */,
+				F8921928BD124CE1F3CBF5DE /* [CP] Embed Pods Frameworks */,
+				373A6C57B7D46F21668AA986 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,9 +318,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAC7EFF51D2BA52F0047F202 /* Build configuration list for PBXNativeTarget "TetmaUITests" */;
 			buildPhases = (
+				D40B1539A3D61EF67ECB52A3 /* [CP] Check Pods Manifest.lock */,
 				EAC7EFE21D2BA52F0047F202 /* Sources */,
 				EAC7EFE31D2BA52F0047F202 /* Frameworks */,
 				EAC7EFE41D2BA52F0047F202 /* Resources */,
+				3AA279CAD797F6F315F5A3D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,6 +350,11 @@
 						DevelopmentTeamName = "Mark Vaisman";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					EAC7EFDA1D2BA52F0047F202 = {
 						CreatedOnToolsVersion = 7.3;
@@ -381,6 +410,7 @@
 				EA1F1F711D5791B900F09FE1 /* swipe0.wav in Resources */,
 				EA1F1F7B1D57975600F09FE1 /* numbers.wav in Resources */,
 				EAC7EFD51D2BA52F0047F202 /* LaunchScreen.storyboard in Resources */,
+				EA7A220D1D5CA1050062B849 /* GoogleService-Info.plist in Resources */,
 				EAC7EFD21D2BA52F0047F202 /* Assets.xcassets in Resources */,
 				EABE82831D5763E1009CA1BC /* menu_click.wav in Resources */,
 				EA1F1F761D5791F500F09FE1 /* swipe1.wav in Resources */,
@@ -406,6 +436,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		247A040CFB4710322B0C6A9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		373A6C57B7D46F21668AA986 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetmaTests/Pods-TetmaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AA279CAD797F6F315F5A3D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetmaUITests/Pods-TetmaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D40B1539A3D61EF67ECB52A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8921928BD124CE1F3CBF5DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetmaTests/Pods-TetmaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAC7EFBF1D2BA52F0047F202 /* Sources */ = {
@@ -563,8 +671,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Vaisman (27PLXS7TA6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Vaisman (27PLXS7TA6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -610,8 +719,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Vaisman (27PLXS7TA6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Vaisman (27PLXS7TA6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -636,11 +745,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = numbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tetmaplay.tetma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -650,11 +764,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = numbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AAP.numbers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tetmaplay.tetma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
