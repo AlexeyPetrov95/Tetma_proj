@@ -1,8 +1,66 @@
 import SpriteKit
+import Foundation
+import SystemConfiguration
+
+
+public class Reachability {
+    
+    class func isConnectedToNetwork() -> Bool {
+        
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+    
+        guard let defaultRouteReachability = withUnsafePointer(&zeroAddress, {
+            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
+    //        SCNetworkReachabilityCreateWithName(nil, UnsafePointer())
+        }) else {
+            return false
+        }
+        
+        var flags : SCNetworkReachabilityFlags = []
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
+            return false
+        }
+        
+        let isReachable = flags.contains(.Reachable)
+        let needsConnection = flags.contains(.ConnectionRequired)
+
+        return (isReachable && !needsConnection)
+        /*   var status:Bool = false
+        
+        let url = NSURL(string: "http://google.com")
+        let request = NSMutableURLRequest(url: url! as URL)
+        request.httpMethod = "HEAD"
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData
+        request.timeoutInterval = 10.0
+        
+        var response:URLResponse?
+        
+       
+         _ = try! NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response) as NSData?
+       
+        
+        
+       // _ = NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
+        
+        if let httpResponse = response as? HTTPURLResponse {
+            if httpResponse.statusCode == 200 {
+                status = true
+            }
+        }
+        
+        return status*/
+    
+    }
+
+
+}
 
 let sndButtonClick = SKAction.playSoundFileNamed("menu_click.wav", waitForCompletion: false)
 
-func randomInt(_ min: Int, max: Int) -> Int {
+func randomInt(min: Int, max: Int) -> Int {
     return min + Int(arc4random_uniform(UInt32(max - min + 1)))
 }
 
@@ -36,19 +94,19 @@ func startNextNumber(scene: GameScene ) -> Bool{
     return false
 }
 
-func getRowByPosition (_ position: CGFloat, sizeForEachVerticalRow: CGFloat) -> Int {
+func getRowByPosition (position: CGFloat, sizeForEachVerticalRow: CGFloat) -> Int {
     return Int(position / sizeForEachVerticalRow)
 }
 
-func getPositionByRow (_ row:Int, sizeForEachVerticalRow: CGFloat) -> CGFloat {
+func getPositionByRow (row:Int, sizeForEachVerticalRow: CGFloat) -> CGFloat {
     let position = CGFloat(row) * sizeForEachVerticalRow +  sizeForEachVerticalRow / 2
     return position
 }
 
 
-func getNearestRowLocation (_ position: CGFloat, sizeForEachVerticalRow: CGFloat, countOfRow: Int) -> CGFloat {
+func getNearestRowLocation (position: CGFloat, sizeForEachVerticalRow: CGFloat, countOfRow: Int) -> CGFloat {
     var rowPosition:CGFloat = 0
-    var diff:CGFloat = CGFloat.greatestFiniteMagnitude
+    var diff:CGFloat = CGFloat.max
     for i in 0..<countOfRow {
         if abs(position - (CGFloat(i) * sizeForEachVerticalRow + sizeForEachVerticalRow / 2)) < diff {  // условие
             diff = abs(position - (CGFloat(i) * sizeForEachVerticalRow +  sizeForEachVerticalRow / 2))
@@ -58,11 +116,11 @@ func getNearestRowLocation (_ position: CGFloat, sizeForEachVerticalRow: CGFloat
     return rowPosition
 }
 
-func presentNewScene (_ scene: SKScene, skView: SKView, button: SKNode) {
+func presentNewScene (scene: SKScene, skView: SKView, button: SKNode) {
     scene.size = skView.bounds.size
-    scene.scaleMode = .aspectFill
+    scene.scaleMode = .AspectFill
     if GameViewController.sound  {
-        button.run(sndButtonClick, completion: {
+        button.runAction(sndButtonClick, completion: {
             skView.presentScene(scene)
         })
     } else {

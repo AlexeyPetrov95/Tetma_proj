@@ -6,7 +6,9 @@ class SettingsScene: SKScene {
     let arrayOfValues = ["About us", "Back"]
     let sndButtonClick = SKAction.playSoundFileNamed("menu_click.wav", waitForCompletion: false)
     
-    override func didMove(to view: SKView) {
+
+    
+    override func didMoveToView(view: SKView) {
         skView = self.view! as SKView
         let backgroundNode = SKSpriteNode(imageNamed: "main_menu")
         backgroundNode.size = self.frame.size
@@ -17,16 +19,16 @@ class SettingsScene: SKScene {
         createSoundButton()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            let location = touch.location(in: self)
-            if self.atPoint(location).name == "Back_button" || self.atPoint(location).name == "Back_label" {
-                let btn = self.childNode(withName: "Back_button")
+            let location = touch.locationInNode(self)
+            if self.nodeAtPoint(location).name == "Back_button" || self.nodeAtPoint(location).name == "Back_label" {
+                let btn = self.childNodeWithName("Back_button")
                 let scene = MenuScene(size: self.size)
                 presentNewScene(scene, skView: skView, button: btn!)
-            } else if self.atPoint(location).name == "Sound_button" || self.atPoint(location).name == "Sound_label" {
-                let btn = self.childNode(withName: "Sound_button")
-                let label = btn!.childNode(withName: "Sound_label") as! SKLabelNode
+            } else if self.nodeAtPoint(location).name == "Sound_button" || self.nodeAtPoint(location).name == "Sound_label" {
+                let btn = self.childNodeWithName( "Sound_button")
+                let label = btn!.childNodeWithName( "Sound_label") as! SKLabelNode
                 if GameViewController.sound {
                     label.text = "Sound on"
                     GameViewController.sound = false
@@ -34,8 +36,8 @@ class SettingsScene: SKScene {
                     label.text = "Sound off"
                     GameViewController.sound = true
                 }
-            } else if self.atPoint(location).name == "Sound_button" {
-                let soundButton = self.childNode(withName: "Sound_button") as! SKSpriteNode
+            } else if self.nodeAtPoint(location).name == "Sound_button" {
+                let soundButton = self.childNodeWithName("Sound_button") as! SKSpriteNode
                 if GameViewController.sound {
                     GameViewController.sound = false
                     soundButton.texture = SKTexture(imageNamed: "sound_off")
@@ -48,7 +50,7 @@ class SettingsScene: SKScene {
         }
     }
     
-    override func update(_ currentTime: TimeInterval) {
+    override func update(currentTime: NSTimeInterval) {
         /* Called before each frame is rendered */
         
     }

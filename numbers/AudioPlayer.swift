@@ -35,7 +35,8 @@ public class SKTAudio {
     }
     
     public func playBackgroundMusic(filename: String) {
-        let url = Bundle.main.urlForResource(filename, withExtension: nil)
+        let url =  NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
+       
         if (url == nil) {
             print("Could not find file: \(filename)")
             return
@@ -43,7 +44,7 @@ public class SKTAudio {
         
         var error: NSError? = nil
         do {
-            backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!)
+            backgroundMusicPlayer = try AVAudioPlayer(contentsOfURL: url!)
         } catch let error1 as NSError {
             error = error1
             backgroundMusicPlayer = nil
@@ -59,7 +60,7 @@ public class SKTAudio {
     
     public func pauseBackgroundMusic() {
         if let player = backgroundMusicPlayer {
-            if player.isPlaying {
+            if player.playing {
                 player.pause()
             }
         }
@@ -67,14 +68,15 @@ public class SKTAudio {
     
     public func resumeBackgroundMusic() {
         if let player = backgroundMusicPlayer {
-            if !player.isPlaying {
+            if !player.playing {
                 player.play()
             }
         }
     }
     
     public func playBackgroundMusicOnce (filename: String) {
-        let url = Bundle.main.urlForResource(filename, withExtension: nil)
+        let url =  NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
+
         if (url == nil) {
             print("Could not find file: \(filename)")
             return
@@ -82,7 +84,7 @@ public class SKTAudio {
         
         var error: NSError? = nil
         do {
-            backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!)
+            backgroundMusicPlayer = try AVAudioPlayer(contentsOfURL: url!)
         } catch let error1 as NSError {
             error = error1
             backgroundMusicPlayer = nil
@@ -97,14 +99,15 @@ public class SKTAudio {
     }
     
     public func playSoundEffect(filename: String) {
-        let url = Bundle.main.urlForResource(filename, withExtension: nil)
+       let url =  NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
+        
         if (url == nil) {
             print("Could not find file: \(filename)")
         }
         
         var error: NSError? = nil
         do {
-            soundEffectPlayer = try AVAudioPlayer(contentsOf: url!)
+            soundEffectPlayer = try AVAudioPlayer(contentsOfURL: url!)
         } catch let error1 as NSError {
             error = error1
             soundEffectPlayer = nil
@@ -119,7 +122,8 @@ public class SKTAudio {
     }
     
     public func stopSoundEffect(filename: String) {
-        let url = Bundle.main.urlForResource(filename, withExtension: nil)
+        let url =  NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
+
         if (url == nil) {
             print("Could not find file: \(filename)")
             return
@@ -127,7 +131,7 @@ public class SKTAudio {
         
         var error: NSError? = nil
         do {
-            soundEffectPlayer = try AVAudioPlayer(contentsOf: url!)
+            soundEffectPlayer = try AVAudioPlayer(contentsOfURL: url!)
         } catch let error1 as NSError {
             error = error1
             soundEffectPlayer = nil

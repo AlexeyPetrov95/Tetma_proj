@@ -6,8 +6,8 @@ class Helper: GameNumber {
     init (scene: GameScene, prevNumber: (Int, Int)) {
         super.init()
         
-        self.rightRow.0 = self.getRowFotNextCorrectNumber(countOfRow: scene.countOfRow)
-        self.value = self.getNextCorrectValue(prevNumber: prevNumber)
+        self.rightRow.0 = self.getRowFotNextCorrectNumber(scene.countOfRow)
+        self.value = self.getNextCorrectValue(prevNumber)
         self.row = setRandomRow(scene.sizeForEachVerticalRow)
         self.label.fontName = "Helvetica-Bold"
         self.label.text = String(self.value)
