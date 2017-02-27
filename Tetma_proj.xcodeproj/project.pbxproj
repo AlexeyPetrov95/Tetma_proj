@@ -17,6 +17,7 @@
 		EAE3D7051E64510700DF7548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE3D7031E64510700DF7548 /* LaunchScreen.storyboard */; };
 		EAE3D7101E64510700DF7548 /* Tetma_projTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D70F1E64510700DF7548 /* Tetma_projTests.swift */; };
 		EAE3D71B1E64510700DF7548 /* Tetma_projUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D71A1E64510700DF7548 /* Tetma_projUITests.swift */; };
+		EAE3D7291E6451A200DF7548 /* SKSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D7281E6451A200DF7548 /* SKSceneExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		EAE3D7161E64510700DF7548 /* Tetma_projUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tetma_projUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE3D71A1E64510700DF7548 /* Tetma_projUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tetma_projUITests.swift; sourceTree = "<group>"; };
 		EAE3D71C1E64510700DF7548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE3D7281E6451A200DF7548 /* SKSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSceneExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				EAE3D6F61E64510700DF7548 /* GameScene.sks */,
 				EAE3D6F81E64510700DF7548 /* Actions.sks */,
 				EAE3D6FA1E64510700DF7548 /* GameScene.swift */,
+				EAE3D7281E6451A200DF7548 /* SKSceneExtension.swift */,
 				EAE3D6FC1E64510700DF7548 /* GameViewController.swift */,
 				EAE3D6FE1E64510700DF7548 /* Main.storyboard */,
 				EAE3D7011E64510700DF7548 /* Assets.xcassets */,
@@ -272,6 +275,7 @@
 			files = (
 				EAE3D6FB1E64510700DF7548 /* GameScene.swift in Sources */,
 				EAE3D6FD1E64510700DF7548 /* GameViewController.swift in Sources */,
+				EAE3D7291E6451A200DF7548 /* SKSceneExtension.swift in Sources */,
 				EAE3D6F51E64510700DF7548 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

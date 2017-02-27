@@ -1,55 +1,71 @@
-//
-//  GameViewController.swift
-//  Tetma_proj
-//
-//  Created by Alexey Petrov on 2/27/17.
-//  Copyright © 2017 Alexey Petrov. All rights reserved.
-//
+
 
 import UIKit
 import SpriteKit
-import GameplayKit
+//import GoogleMobileAds
+import StoreKit
+
+//public var interstitial: GADInterstitial!
 
 class GameViewController: UIViewController {
-
+    
+    
+    static var sound = true
+    //var adBannerView: GADBannerView!
+    static var adBool = UserDefaults.standard
+    
+    
+    
+//    func createAndLoadInterstitial() {
+//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9894820443925606/3042654572")
+//        let request = GADRequest()
+//        request.testDevices = [ kGADSimulatorID, "ac772c88a5cdd8324566c05e63727702" ]
+//        interstitial.load(request)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+        
+        GameViewController.adBool.set(true, forKey: "adBool")
+        
+        if let scene = MenuScene(fileNamed:"GameScene") {
+            let skView = self.view as! SKView
+            scene.size = skView.bounds.size
+            scene.scaleMode = .aspectFill
             
-            view.ignoresSiblingOrder = true
+//            adBannerView = GADBannerView(frame: CGRect(x: 0, y: 0, width: self.view!.frame.width, height: 50))
+//            adBannerView.delegate = self
+//            adBannerView.rootViewController = self
+//            adBannerView.adUnitID = "ca-app-pub-9894820443925606/8733568178"
+//            createAndLoadInterstitial()
+//            
+//            //let reqAd = GADRequest()
+//            //       reqAd.testDevices = ["ac772c88a5cdd8324566c05e63727702"];
+//           // adBannerView.load(reqAd)
+           
+            GameViewController.adBool.set(false, forKey: "adBool")
+           // self.view.addSubview(adBannerView)
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+            
+           // adBannerView.isHidden = true
+            
+            skView.presentScene(scene)
+        
+            
         }
+        
     }
-
-    override var shouldAutorotate: Bool {
+    
+    
+    
+    override var prefersStatusBarHidden: Bool {
         return true
     }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    
 }
