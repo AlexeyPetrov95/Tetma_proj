@@ -23,9 +23,9 @@ class MenuScene: SKScene {
     override func didMove(to view: SKView) {
         self.skView = self.view! as SKView
         
-        let backgroundNode = SKSpriteNode(imageNamed: "background_default")
+        let backgroundNode = SKSpriteNode(imageNamed: "background")
         backgroundNode.size = self.frame.size
-        backgroundNode.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+        backgroundNode.position = CGPoint(x: 0, y: 0)
         backgroundNode.zPosition = 0
         self.createMenuInScene(arrayOfValues: arrayOfValues, zPosition: 3)
         self.addChild(backgroundNode)
