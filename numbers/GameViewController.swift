@@ -1,3 +1,5 @@
+
+
 import UIKit
 import SpriteKit
 import GoogleMobileAds
@@ -10,7 +12,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     static var sound = true
     var adBannerView: GADBannerView!
-    static var adBool = NSUserDefaults.standardUserDefaults()
+    static var adBool = UserDefaults.standard
 
 
     
@@ -18,19 +20,19 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9894820443925606/3042654572")
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID, "ac772c88a5cdd8324566c05e63727702" ]
-        interstitial.loadRequest(request)
+        interstitial.load(request)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        GameViewController.adBool.setBool(true, forKey: "adBool")
+        
+        GameViewController.adBool.set(true, forKey: "adBool")
         
         if let scene = MenuScene(fileNamed:"GameScene") {
             let skView = self.view as! SKView
             scene.size = skView.bounds.size
-            scene.scaleMode = .AspectFill
+            scene.scaleMode = .aspectFill
             
             adBannerView = GADBannerView(frame: CGRect(x: 0, y: 0, width: self.view!.frame.width, height: 50))
             adBannerView.delegate = self
@@ -39,24 +41,21 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
             createAndLoadInterstitial()
             
             let reqAd = GADRequest()
-            reqAd.testDevices = ["ac772c88a5cdd8324566c05e63727702"];
-            adBannerView.loadRequest(reqAd)
+     //       reqAd.testDevices = ["ac772c88a5cdd8324566c05e63727702"];
+            adBannerView.load(reqAd)
             
-            if !adBannerView.hidden {
-                GameViewController.adBool.setBool(false, forKey: "adBool")
-            } else {
-                GameViewController.adBool.setBool(false, forKey: "adBool")
-                 self.view.addSubview(adBannerView)
-            }
+            GameViewController.adBool.set(false, forKey: "adBool")
+            self.view.addSubview(adBannerView)
+            
                      
-           
+            adBannerView.isHidden = true
             
             skView.presentScene(scene)
             
             
  
             
-           // adBannerView.isHidden = true
+       
             
            
         }
@@ -65,12 +64,9 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
 
 
-    
- 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
- 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
