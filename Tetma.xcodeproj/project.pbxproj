@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA1F1F711D5791B900F09FE1 /* swipe0.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA1F1F701D5791B900F09FE1 /* swipe0.wav */; };
-		EA1F1F761D5791F500F09FE1 /* swipe1.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA1F1F721D5791F500F09FE1 /* swipe1.wav */; };
-		EA1F1F771D5791F500F09FE1 /* swipe2.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA1F1F731D5791F500F09FE1 /* swipe2.wav */; };
-		EA1F1F781D5791F500F09FE1 /* swipe3.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA1F1F741D5791F500F09FE1 /* swipe3.wav */; };
-		EA1F1F791D5791F500F09FE1 /* swipe4.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA1F1F751D5791F500F09FE1 /* swipe4.wav */; };
-		EA1F1F7B1D57975600F09FE1 /* numbers.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA1F1F7A1D57975600F09FE1 /* numbers.wav */; };
+		EA0BC6041DAB951700C69608 /* intro+repeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC5FB1DAB951700C69608 /* intro+repeat.mp3 */; };
+		EA0BC6061DAB951700C69608 /* numbers.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC5FD1DAB951700C69608 /* numbers.mp3 */; };
+		EA0BC6071DAB951700C69608 /* repeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC5FE1DAB951700C69608 /* repeat.mp3 */; };
+		EA0BC6081DAB951700C69608 /* swipe0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC5FF1DAB951700C69608 /* swipe0.mp3 */; };
+		EA0BC6091DAB951700C69608 /* swipe1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC6001DAB951700C69608 /* swipe1.mp3 */; };
+		EA0BC60A1DAB951700C69608 /* swipe2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC6011DAB951700C69608 /* swipe2.mp3 */; };
+		EA0BC60B1DAB951700C69608 /* swipe3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC6021DAB951700C69608 /* swipe3.mp3 */; };
+		EA0BC60C1DAB951700C69608 /* swipe4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA0BC6031DAB951700C69608 /* swipe4.mp3 */; };
+		EA32BF831DA126430048E170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA32BF821DA126430048E170 /* GoogleService-Info.plist */; };
+		EA32BF991DA2E05D0048E170 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32BF981DA2E05D0048E170 /* GoogleMobileAds.framework */; };
 		EA3367E81D3A016D0030D5A6 /* FallingNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3367E71D3A016D0030D5A6 /* FallingNumber.swift */; };
 		EA3367EA1D3A01B50030D5A6 /* InitialNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3367E91D3A01B50030D5A6 /* InitialNumber.swift */; };
 		EA3367EC1D3A01FD0030D5A6 /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3367EB1D3A01FD0030D5A6 /* SKNodeExtension.swift */; };
@@ -26,10 +30,7 @@
 		EA6D94461D34C2D300F8811B /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94451D34C2D300F8811B /* LevelScene.swift */; };
 		EA6D94481D34C5D200F8811B /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94471D34C5D200F8811B /* SettingsScene.swift */; };
 		EA6D944A1D34C6AD00F8811B /* BuyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D94491D34C6AD00F8811B /* BuyScene.swift */; };
-		EA7A220D1D5CA1050062B849 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA7A220C1D5CA1050062B849 /* GoogleService-Info.plist */; };
-		EA89F9461D5F335200356FC1 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA551A9D1D5E365E004CAA9C /* GoogleMobileAds.framework */; };
 		EABB3EDA1D6C3418002A7D5D /* AboutUsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB3ED91D6C3418002A7D5D /* AboutUsScene.swift */; };
-		EABE82831D5763E1009CA1BC /* menu_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = EABE82821D5763E1009CA1BC /* menu_click.wav */; };
 		EABE82891D57720B009CA1BC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABE82881D57720B009CA1BC /* AudioPlayer.swift */; };
 		EAC7EFC71D2BA52F0047F202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFC61D2BA52F0047F202 /* AppDelegate.swift */; };
 		EAC7EFC91D2BA52F0047F202 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAC7EFC81D2BA52F0047F202 /* GameScene.sks */; };
@@ -39,12 +40,11 @@
 		EAC7EFD51D2BA52F0047F202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC7EFD31D2BA52F0047F202 /* LaunchScreen.storyboard */; };
 		EAC7EFE01D2BA52F0047F202 /* numbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFDF1D2BA52F0047F202 /* numbersTests.swift */; };
 		EAC7EFEB1D2BA52F0047F202 /* numbersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC7EFEA1D2BA52F0047F202 /* numbersUITests.swift */; };
+		EACADE451DAB96F100A4DC5E /* menu_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = EACADE441DAB96F100A4DC5E /* menu_click1.wav */; };
 		EACAEE641D44C44C0046147A /* SKSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAEE631D44C44C0046147A /* SKSceneExtension.swift */; };
 		EACAEE681D45F9540046147A /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAEE671D45F9540046147A /* GeneralFunctions.swift */; };
 		EAD615E31D702FD400059EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD615E21D702FD400059EA1 /* Main.storyboard */; };
 		EAD615E51D70336200059EA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD615E41D70336200059EA1 /* StoreKit.framework */; };
-		EAF493161D577429007F5C95 /* intro+repeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAF493151D577429007F5C95 /* intro+repeat.wav */; };
-		EAF493181D577823007F5C95 /* repeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAF493171D577823007F5C95 /* repeat.wav */; };
 		EAFD67A91D3CB09700304FF6 /* GameNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD67A81D3CB09700304FF6 /* GameNumber.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,17 +66,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EA1F1F701D5791B900F09FE1 /* swipe0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = swipe0.wav; path = ../../../Downloads/Sounds/Swipes/swipe0.wav; sourceTree = "<group>"; };
-		EA1F1F721D5791F500F09FE1 /* swipe1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = swipe1.wav; path = ../../../Downloads/Sounds/Swipes/swipe1.wav; sourceTree = "<group>"; };
-		EA1F1F731D5791F500F09FE1 /* swipe2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = swipe2.wav; path = ../../../Downloads/Sounds/Swipes/swipe2.wav; sourceTree = "<group>"; };
-		EA1F1F741D5791F500F09FE1 /* swipe3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = swipe3.wav; path = ../../../Downloads/Sounds/Swipes/swipe3.wav; sourceTree = "<group>"; };
-		EA1F1F751D5791F500F09FE1 /* swipe4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = swipe4.wav; path = ../../../Downloads/Sounds/Swipes/swipe4.wav; sourceTree = "<group>"; };
-		EA1F1F7A1D57975600F09FE1 /* numbers.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = numbers.wav; path = ../../../Downloads/Sounds/Numbers/numbers.wav; sourceTree = "<group>"; };
+		EA0BC5FB1DAB951700C69608 /* intro+repeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "intro+repeat.mp3"; sourceTree = "<group>"; };
+		EA0BC5FD1DAB951700C69608 /* numbers.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = numbers.mp3; sourceTree = "<group>"; };
+		EA0BC5FE1DAB951700C69608 /* repeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = repeat.mp3; sourceTree = "<group>"; };
+		EA0BC5FF1DAB951700C69608 /* swipe0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swipe0.mp3; sourceTree = "<group>"; };
+		EA0BC6001DAB951700C69608 /* swipe1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swipe1.mp3; sourceTree = "<group>"; };
+		EA0BC6011DAB951700C69608 /* swipe2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swipe2.mp3; sourceTree = "<group>"; };
+		EA0BC6021DAB951700C69608 /* swipe3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swipe3.mp3; sourceTree = "<group>"; };
+		EA0BC6031DAB951700C69608 /* swipe4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swipe4.mp3; sourceTree = "<group>"; };
+		EA32BF821DA126430048E170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA32BF981DA2E05D0048E170 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		EA3367E71D3A016D0030D5A6 /* FallingNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallingNumber.swift; sourceTree = "<group>"; };
 		EA3367E91D3A01B50030D5A6 /* InitialNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialNumber.swift; sourceTree = "<group>"; };
 		EA3367EB1D3A01FD0030D5A6 /* SKNodeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNodeExtension.swift; sourceTree = "<group>"; };
 		EA52D04F1D3BD7D6005C1256 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		EA551A9D1D5E365E004CAA9C /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		EA5A64A21D40B4D500846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EA5A64A61D40B4D500846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA5A64AB1D40B4D600846F3E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -87,7 +90,6 @@
 		EA6D94451D34C2D300F8811B /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		EA6D94471D34C5D200F8811B /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		EA6D94491D34C6AD00F8811B /* BuyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyScene.swift; sourceTree = "<group>"; };
-		EA7A220C1D5CA1050062B849 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EAB5C5451D537F1700920801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EAB5C5461D537F1700920801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAB5C5471D537F1700920801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 		EAB5C5601D538BDE00920801 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAB5C5611D538BDE00920801 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EABB3ED91D6C3418002A7D5D /* AboutUsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsScene.swift; sourceTree = "<group>"; };
-		EABE82821D5763E1009CA1BC /* menu_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = menu_click.wav; path = "../../../Downloads/Sounds/Menu Clicks/menu_click.wav"; sourceTree = "<group>"; };
 		EABE82881D57720B009CA1BC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		EAC7EFC31D2BA52F0047F202 /* Tetma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC7EFC61D2BA52F0047F202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,12 +131,11 @@
 		EAC7EFE61D2BA52F0047F202 /* TetmaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetmaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC7EFEA1D2BA52F0047F202 /* numbersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numbersUITests.swift; sourceTree = "<group>"; };
 		EAC7EFEC1D2BA52F0047F202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACADE441DAB96F100A4DC5E /* menu_click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu_click1.wav; sourceTree = "<group>"; };
 		EACAEE631D44C44C0046147A /* SKSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSceneExtension.swift; sourceTree = "<group>"; };
 		EACAEE671D45F9540046147A /* GeneralFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
 		EAD615E21D702FD400059EA1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EAD615E41D70336200059EA1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		EAF493151D577429007F5C95 /* intro+repeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "intro+repeat.wav"; path = "../../../Downloads/Sounds/Main Music/intro+repeat.wav"; sourceTree = "<group>"; };
-		EAF493171D577823007F5C95 /* repeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = repeat.wav; path = "../../../Downloads/Sounds/Main Music/repeat.wav"; sourceTree = "<group>"; };
 		EAFD67A81D3CB09700304FF6 /* GameNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA89F9461D5F335200356FC1 /* GoogleMobileAds.framework in Frameworks */,
+				EA32BF991DA2E05D0048E170 /* GoogleMobileAds.framework in Frameworks */,
 				EAD615E51D70336200059EA1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +166,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA0BC5FA1DAB950A00C69608 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				EACADE441DAB96F100A4DC5E /* menu_click1.wav */,
+				EA0BC5FB1DAB951700C69608 /* intro+repeat.mp3 */,
+				EA0BC5FD1DAB951700C69608 /* numbers.mp3 */,
+				EA0BC5FE1DAB951700C69608 /* repeat.mp3 */,
+				EA0BC5FF1DAB951700C69608 /* swipe0.mp3 */,
+				EA0BC6001DAB951700C69608 /* swipe1.mp3 */,
+				EA0BC6011DAB951700C69608 /* swipe2.mp3 */,
+				EA0BC6021DAB951700C69608 /* swipe3.mp3 */,
+				EA0BC6031DAB951700C69608 /* swipe4.mp3 */,
+			);
+			name = sound;
+			sourceTree = "<group>";
+		};
 		EA3367E61D3A01590030D5A6 /* objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,26 +204,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EABE82811D5763D0009CA1BC /* sound */ = {
-			isa = PBXGroup;
-			children = (
-				EA1F1F7A1D57975600F09FE1 /* numbers.wav */,
-				EABE82821D5763E1009CA1BC /* menu_click.wav */,
-				EAF493151D577429007F5C95 /* intro+repeat.wav */,
-				EAF493171D577823007F5C95 /* repeat.wav */,
-				EA1F1F701D5791B900F09FE1 /* swipe0.wav */,
-				EA1F1F721D5791F500F09FE1 /* swipe1.wav */,
-				EA1F1F731D5791F500F09FE1 /* swipe2.wav */,
-				EA1F1F741D5791F500F09FE1 /* swipe3.wav */,
-				EA1F1F751D5791F500F09FE1 /* swipe4.wav */,
-			);
-			name = sound;
-			sourceTree = "<group>";
-		};
 		EAC7EFBA1D2BA52F0047F202 = {
 			isa = PBXGroup;
 			children = (
-				EA551A9D1D5E365E004CAA9C /* GoogleMobileAds.framework */,
+				EA32BF981DA2E05D0048E170 /* GoogleMobileAds.framework */,
 				EAC7EFC51D2BA52F0047F202 /* numbers */,
 				EAC7EFDE1D2BA52F0047F202 /* numbersTests */,
 				EAC7EFE91D2BA52F0047F202 /* numbersUITests */,
@@ -229,7 +229,7 @@
 		EAC7EFC51D2BA52F0047F202 /* numbers */ = {
 			isa = PBXGroup;
 			children = (
-				EABE82811D5763D0009CA1BC /* sound */,
+				EA0BC5FA1DAB950A00C69608 /* sound */,
 				EA5A64B21D40B4D700846F3E /* InfoPlist.strings */,
 				EA5A64A71D40B4D500846F3E /* Localizable.strings */,
 				EA3367E61D3A01590030D5A6 /* objects */,
@@ -248,7 +248,7 @@
 				EAC7EFD11D2BA52F0047F202 /* Assets.xcassets */,
 				EAC7EFD31D2BA52F0047F202 /* LaunchScreen.storyboard */,
 				EAC7EFD61D2BA52F0047F202 /* Info.plist */,
-				EA7A220C1D5CA1050062B849 /* GoogleService-Info.plist */,
+				EA32BF821DA126430048E170 /* GoogleService-Info.plist */,
 			);
 			path = numbers;
 			sourceTree = "<group>";
@@ -400,22 +400,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA1F1F771D5791F500F09FE1 /* swipe2.wav in Resources */,
 				EA5A64A51D40B4D500846F3E /* Localizable.strings in Resources */,
-				EA1F1F781D5791F500F09FE1 /* swipe3.wav in Resources */,
+				EA32BF831DA126430048E170 /* GoogleService-Info.plist in Resources */,
 				EA5A64B01D40B4D700846F3E /* InfoPlist.strings in Resources */,
-				EAF493181D577823007F5C95 /* repeat.wav in Resources */,
 				EAD615E31D702FD400059EA1 /* Main.storyboard in Resources */,
-				EAF493161D577429007F5C95 /* intro+repeat.wav in Resources */,
+				EA0BC60C1DAB951700C69608 /* swipe4.mp3 in Resources */,
+				EA0BC6081DAB951700C69608 /* swipe0.mp3 in Resources */,
+				EACADE451DAB96F100A4DC5E /* menu_click1.wav in Resources */,
+				EA0BC6071DAB951700C69608 /* repeat.mp3 in Resources */,
+				EA0BC6061DAB951700C69608 /* numbers.mp3 in Resources */,
+				EA0BC60A1DAB951700C69608 /* swipe2.mp3 in Resources */,
+				EA0BC6091DAB951700C69608 /* swipe1.mp3 in Resources */,
+				EA0BC60B1DAB951700C69608 /* swipe3.mp3 in Resources */,
 				EAC7EFC91D2BA52F0047F202 /* GameScene.sks in Resources */,
-				EA1F1F711D5791B900F09FE1 /* swipe0.wav in Resources */,
-				EA1F1F7B1D57975600F09FE1 /* numbers.wav in Resources */,
 				EAC7EFD51D2BA52F0047F202 /* LaunchScreen.storyboard in Resources */,
-				EA7A220D1D5CA1050062B849 /* GoogleService-Info.plist in Resources */,
+				EA0BC6041DAB951700C69608 /* intro+repeat.mp3 in Resources */,
 				EAC7EFD21D2BA52F0047F202 /* Assets.xcassets in Resources */,
-				EABE82831D5763E1009CA1BC /* menu_click.wav in Resources */,
-				EA1F1F761D5791F500F09FE1 /* swipe1.wav in Resources */,
-				EA1F1F791D5791F500F09FE1 /* swipe4.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +733,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -752,7 +752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
