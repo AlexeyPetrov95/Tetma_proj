@@ -7,7 +7,7 @@ class TutorialScene: SKScene  {
     
 
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         self.skView = self.view! as SKView
         
         let background = SKSpriteNode(imageNamed: "back_tutorial")
@@ -28,8 +28,8 @@ class TutorialScene: SKScene  {
         //qlabelForButton.fontName = "Helvetica"
         labelForButton.zPosition = zPosition
         labelForButton.fontColor = UIColor(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
-        labelForButton.horizontalAlignmentMode = .Center
-        labelForButton.verticalAlignmentMode = .Center
+        labelForButton.horizontalAlignmentMode = .center
+        labelForButton.verticalAlignmentMode = .center
         labelForButton.name = "Back_label"
         labelForButton.fontName = "Helvetica"
         labelForButton.text = NSLocalizedString("Back", comment: "Back button")
@@ -38,7 +38,7 @@ class TutorialScene: SKScene  {
         button.position = CGPoint(x: self.frame.midX, y: 50)
      //   button.path = UIBezierPath(rect: CGRectMake(origin: CGPointMake(x: -150, y: -40), size: CGSizeMake(width: 300, height: 80))).cgPath
         
-        button.path = UIBezierPath(rect: CGRectMake(-150, -40, 300, 80)).CGPath
+        button.path = UIBezierPath(rect: CGRect(x: -150, y:-40, width: 300, height:80)).cgPath
         
         button.fillColor = UIColor(red: 0.2039215686, green: 0.2117647059, blue: 0.3019607843, alpha: 0.75)
         button.strokeColor = UIColor(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
@@ -53,13 +53,13 @@ class TutorialScene: SKScene  {
         self.addChild(background)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            let location = touch.locationInNode(self)
-            if self.nodeAtPoint(location).name == "Back_button" || self.nodeAtPoint(location).name == "Back_label" {
-                let btn = self.childNodeWithName("Back_button")
+            let location = touch.location(in: self)
+            if self.atPoint(location).name == "Back_button" || self.atPoint(location).name == "Back_label" {
+                let btn = self.childNode(withName: "Back_button")
                 let scene = MenuScene(size: self.size)
-                presentNewScene(scene, skView: skView, button: btn!)
+                presentNewScene(scene: scene, skView: skView, button: btn!)
             }
         }
     }
