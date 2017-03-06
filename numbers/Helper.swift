@@ -6,9 +6,9 @@ class Helper: GameNumber {
     init (scene: GameScene, prevNumber: (Int, Int)) {
         super.init()
         
-        self.rightRow.0 = self.getRowFotNextCorrectNumber(scene.countOfRow)
-        self.value = self.getNextCorrectValue(prevNumber)
-        self.row = setRandomRow(scene.sizeForEachVerticalRow)
+        self.rightRow.0 = self.getRowFotNextCorrectNumber(countOfRow: scene.countOfRow)
+        self.value = self.getNextCorrectValue(prevNumber: prevNumber)
+        self.row = setRandomRow(firstRowPosition: scene.sizeForEachVerticalRow)
         self.label.fontName = "Helvetica-Bold"
         self.label.text = String(self.value)
         self.node.position = CGPoint(x: self.row.1, y: scene.frame.height)
@@ -24,7 +24,7 @@ class Helper: GameNumber {
     }
     
     func getRowFotNextCorrectNumber (countOfRow: Int) -> Int { // тут через рандом
-        let randomRow = randomInt(0, max: countOfRow - 1)
+        let randomRow = randomInt(min: 0, max: countOfRow - 1)
         if GameScene.arrayOfStartNumbers[randomRow].firstRowNumber != GameScene.arrayOfStartNumbers[randomRow].secondRowNumber {
             return randomRow
         } else {
