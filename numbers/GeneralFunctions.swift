@@ -4,15 +4,15 @@ import SystemConfiguration
 
 
 public class Reachability {
-    
-    class func isConnectedToNetwork() -> Bool {
+  
+    /*class func isConnectedToNetwork() -> Bool {
         
         var zeroAddress = sockaddr_in()
-        zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
         
     
-        guard let defaultRouteReachability = withUnsafePointer(&zeroAddress, {
+        guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
             SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
     //        SCNetworkReachabilityCreateWithName(nil, UnsafePointer())
         }) else {
@@ -24,8 +24,8 @@ public class Reachability {
             return false
         }
         
-        let isReachable = flags.contains(.Reachable)
-        let needsConnection = flags.contains(.ConnectionRequired)
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
 
         return (isReachable && !needsConnection)
         /*   var status:Bool = false
@@ -53,12 +53,12 @@ public class Reachability {
         
         return status*/
     
-    }
+    }*/
 
 
 }
 
-let sndButtonClick = SKAction.playSoundFileNamed("menu_click.wav", waitForCompletion: false)
+let sndButtonClick = SKAction.playSoundFileNamed("menu_click1.wav", waitForCompletion: false)
 
 func randomInt(min: Int, max: Int) -> Int {
     return min + Int(arc4random_uniform(UInt32(max - min + 1)))
@@ -87,7 +87,7 @@ func startNextNumber(scene: GameScene ) -> Bool{
     let counter = getCountOfFallingNumbers()
     if counter < scene.countOfFallingNumbers {
         let next = getNextNumberForStart()
-        GameScene.nextNumber[next].start(scene)
+        GameScene.nextNumber[next].start(scene: scene)
         GameScene.nextNumber[next].start = true
         return true
     }
@@ -106,7 +106,7 @@ func getPositionByRow (row:Int, sizeForEachVerticalRow: CGFloat) -> CGFloat {
 
 func getNearestRowLocation (position: CGFloat, sizeForEachVerticalRow: CGFloat, countOfRow: Int) -> CGFloat {
     var rowPosition:CGFloat = 0
-    var diff:CGFloat = CGFloat.max
+    var diff:CGFloat = CGFloat.greatestFiniteMagnitude
     for i in 0..<countOfRow {
         if abs(position - (CGFloat(i) * sizeForEachVerticalRow + sizeForEachVerticalRow / 2)) < diff {  // условие
             diff = abs(position - (CGFloat(i) * sizeForEachVerticalRow +  sizeForEachVerticalRow / 2))
@@ -118,9 +118,9 @@ func getNearestRowLocation (position: CGFloat, sizeForEachVerticalRow: CGFloat, 
 
 func presentNewScene (scene: SKScene, skView: SKView, button: SKNode) {
     scene.size = skView.bounds.size
-    scene.scaleMode = .AspectFill
+    scene.scaleMode = .aspectFill
     if GameViewController.sound  {
-        button.runAction(sndButtonClick, completion: {
+        button.run(sndButtonClick, completion: {
             skView.presentScene(scene)
         })
     } else {

@@ -27,7 +27,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     init(size: CGSize, countOfFallingNumbers: Int, fallingSpeed: Double, interval: Int, countOfRow: Int, level: String, timerForHelp: Int) {
         super.init(size: size)
        // self.isPaused = false
-        self.paused = false
+        self.isPaused = false
         self.sizeForEachVerticalRow = self.frame.width / CGFloat(countOfRow)
         self.helpIsActive = false
         
@@ -60,18 +60,18 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     }
     
     var intervalCounter = 0
-    var startTime: NSTimeInterval = 0
+    var startTime: TimeInterval = 0
     
     let menu = SKSpriteNode()
     let nextNumber = SKLabelNode()
     let finallyGameStatus = SKLabelNode()
-    let sndButtonClick = SKAction.playSoundFileNamed("menu_click.wav", waitForCompletion: false)
-    let intro = SKAction.playSoundFileNamed("intro+repeat.wav", waitForCompletion: true)
+    let sndButtonClick = SKAction.playSoundFileNamed("menu_click1.wav", waitForCompletion: false)
+    let intro = SKAction.playSoundFileNamed("intro+repeat.mp3", waitForCompletion: true)
     let arrayOfValues = ["Main menu", "Resume", "Restart"]
     
   
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         let backgroundNode = SKSpriteNode(imageNamed: "background")
         backgroundNode.size = self.frame.size
@@ -85,7 +85,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         pause.size  = CGSize(width: 30, height: 30)
         
        
-        if GameViewController.adBool.boolForKey("adBool") {
+        if GameViewController.adBool.bool(forKey: "adBool") {
              pause.position =  CGPoint(x: pause.frame.width / 2 + 5, y: self.frame.height - pause.frame.height / 2 - 55)
              nextNumberShape.position = CGPoint(x: self.frame.width, y: self.frame.height - 50)
         } else {
@@ -119,7 +119,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         createRow()
         setNextFallingNumbers()
         
-        GameScene.nextNumber[0].start(self)
+        GameScene.nextNumber[0].start(scene: self)
         GameScene.nextNumber[0].start = true
         
         self.addChild(nextNumberShape)
@@ -139,7 +139,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         // Request test ads on devices you specify. Your test device ID is printed to the console when
         // an ad request is made.
         request.testDevices = [ kGADSimulatorID, "ac772c88a5cdd8324566c05e63727702" ]
-        interstitial.loadRequest(request)
+        interstitial.load(request)
     }
     
     func generateDefaultNumbers () {
@@ -162,7 +162,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
 
             GameScene.arrayOfStartNumbers[i].firtsLabelShape.color = colorArray[i]
             GameScene.arrayOfStartNumbers[i].secondLabelShape.fillColor = colorArray[i]
-            GameScene.arrayOfStartNumbers[i].secondLabelShape.strokeColor = UIColor.clearColor()
+            GameScene.arrayOfStartNumbers[i].secondLabelShape.strokeColor = UIColor.clear
             self.addChild(row)
         }
     }
@@ -178,7 +178,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     var prevHeplNumber: (Int, Int) = (-1, 0)
     var intervalTime: CFTimeInterval = 0
   
-    override func update(currentTime: NSTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         
         if !over {
             if !_start {
@@ -189,7 +189,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
             
             if currentTime - intervalTime >= Double(self.interval) {
                 if GameScene.nextNumber.count  == self.countOfFallingNumbers * 2 {
-                    if startNextNumber(self) {
+                    if startNextNumber(scene: self) {
                         self.intervalTime = currentTime
                     }
                     let nextNumber = getNextNumberForStart()
@@ -224,17 +224,17 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
 
     func getMenu() {
         self.addChild(menu)
-        createMenuInScene(arrayOfValues, zPosition: 501)
+        createMenuInScene(arrayOfValues: arrayOfValues, zPosition: 501)
     }
     
     func gameOver (text: String) {
-        createMenuInScene(["Restart", "Main menu"], zPosition: 501)
+        createMenuInScene(arrayOfValues: ["Restart", "Main menu"], zPosition: 501)
         if GameViewController.sound {
           player.pause()   
         }
         self.addChild(menu)
         
-        let restartButton = self.childNodeWithName("Restart_button")
+        let restartButton = self.childNode(withName: "Restart_button")
         
         finallyGameStatus.text = text
         finallyGameStatus.fontName = "Helvetica-Bold"
@@ -242,71 +242,71 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         finallyGameStatus.position = CGPoint(x: self.frame.midX , y: restartButton!.position.y + restartButton!.frame.size.height / 2 + 10)
         self.addChild(finallyGameStatus)
         
-        self.paused = true
-        if interstitial.isReady &&  GameViewController.adBool.boolForKey("adBool") {
+        self.isPaused = true
+        if interstitial.isReady &&  GameViewController.adBool.bool(forKey: "adBool") {
           //  interstitial.present(fromRootViewController: (self.view?.window?.rootViewController)!)
-            interstitial.presentFromRootViewController((self.view?.window?.rootViewController!)!)
+            interstitial.present(fromRootViewController: (self.view?.window?.rootViewController!)!)
         } else {
             print("Ad wasn't ready")
         }
     }
     
     func hideMenu () {
-        self.deleteMenuFromScene(arrayOfValues)
+        self.deleteMenuFromScene(arrayOfValues: arrayOfValues)
         if GameViewController.sound {
            player.play()   
         }
         self.menu.removeFromParent()
     }
     
-    /**************** here touches function ****************/
+    /**************** here is touches function ****************/
     var node: GameNumber! = nil
     var positionInArray: Int = 0
     var oldRow:Int = 0
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if node == nil {
             let touch = touches.first!
         
-            let location = touch.locationInNode(self)
-            let touchedNode = self.nodeAtPoint(location)
+            let location = touch.location(in: self)
+            let touchedNode = self.atPoint(location)
             
             if touchedNode.name == "pause" {
                 if GameViewController.sound {
                    player.pause()
                 }
                 self.getMenu()
-                self.paused = true
-                if interstitial.isReady && GameViewController.adBool.boolForKey("adBool") {
-                    interstitial.presentFromRootViewController((self.view?.window?.rootViewController!)!)
+                self.isPaused = true
+                if interstitial.isReady && GameViewController.adBool.bool(forKey: "adBool") {
+                    interstitial.present(fromRootViewController: (self.view?.window?.rootViewController!)!)
                 } else {
                     print("Ad wasn't ready")
                 }
             } else if touchedNode.name == "Main menu_button" || touchedNode.name == "Main menu_label" {
-                let btn = self.childNodeWithName("Main menu_button")
-                self.paused = false
+                let btn = self.childNode(withName: "Main menu_button")
+                self.isPaused = false
                 let scene = MenuScene(size: self.size)
                 let skView = self.view! as SKView
-                presentNewScene(scene, skView: skView, button: btn!)
+                presentNewScene(scene: scene, skView: skView, button: btn!)
             } else if touchedNode.name == "Resume_button" || touchedNode.name == "Resume_label" {
-                let btn = self.childNodeWithName("Resume_button")
+                let btn = self.childNode(withName: "Resume_button")
                 if GameViewController.sound {
-                    btn!.runAction(sndButtonClick, completion: {
+                    btn!.run(sndButtonClick, completion: {
                         self.hideMenu()
                     })
                 } else {
                     self.hideMenu()
                 }
-                self.paused = false
+                self.isPaused = false
             } else if touchedNode.name == "Restart_button" || touchedNode.name == "Restart_label" {
-                let btn = self.childNodeWithName("Restart_button")
-                self.paused = false
+                let btn = self.childNode(withName: "Restart_button")
+                self.isPaused = false
                 let scene = GameScene(size: self.size, countOfFallingNumbers: self.countOfFallingNumbers, fallingSpeed: self.fallingSpeed, interval: self.interval, countOfRow:self.countOfRow,  level: self.level, timerForHelp: self.timerForHelp)
                 let skView = self.view! as SKView
-                presentNewScene(scene, skView: skView, button: btn!)
+                presentNewScene(scene: scene, skView: skView, button: btn!)
             } else {
-                let row = getRowByPosition(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
-                if let check = getNumberOnRow(row) {
+                let row = getRowByPosition(position: location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
+                if let check = getNumberOnRow(row: row) {
                     node = check
                     node.catching = true
                     node.node.fillColor = UIColor(red: 0.9708690643, green: 0.4256429672, blue: 0.3027836084, alpha: 0.7542540668)
@@ -339,10 +339,10 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     }
     
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent wiwithEventvent: UIEvent?) { // заперт второго тача, подумать!
-        if !self.paused {
+    override func touchesMoved(_ touches: Set<UITouch>, with wiwithEventvent: UIEvent?) { // заперт второго тача, подумать!
+        if !self.isPaused {
             let touch = touches.first!
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             if node != nil {
                 node.node.position.x = location.x
             } else {
@@ -355,24 +355,24 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let newNumber = findCatchingNumber()
         if node != nil {
             let touch = touches.first!
-            let location = touch.locationInNode(self)
-            let newPosition = getNearestRowLocation(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
-            let newRow = getRowByPosition(newPosition, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
+            let location = touch.location(in: self)
+            let newPosition = getNearestRowLocation(position: location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
+            let newRow = getRowByPosition(position: newPosition, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
          //   let action = SKAction.moveTo(newPosition, duration: 0.1)
-            let action = SKAction.moveToX(newPosition, duration: 0.1)
+            let action = SKAction.moveTo(x: newPosition, duration: 0.1)
             let oldRow = node.row.0
-            node.node.fillColor = SKColor.clearColor()
+            node.node.fillColor = SKColor.clear
 
-            node.node.runAction(action, completion: {
+            node.node.run(action, completion: {
                 let number = self.findCatchingNumber()
                 if number != -1 {
                     if GameViewController.sound {
-                        let sound = SKAction.playSoundFileNamed("swipe\(oldRow).wav", waitForCompletion: false)
-                        self.runAction(sound)
+                        let sound = SKAction.playSoundFileNamed("swipe\(oldRow).mp3", waitForCompletion: false)
+                        self.run(sound)
                     }
                     self.position.x = newPosition
                     GameScene.nextNumber[number].row = (newRow, newPosition)
@@ -382,21 +382,21 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
             self.node = nil
         } else if node == nil && newNumber != -1 {
             let touch = touches.first!
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             node = GameScene.nextNumber[newNumber]
-            let newPosition = getNearestRowLocation(location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
-            let newRow = getRowByPosition(newPosition, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
+            let newPosition = getNearestRowLocation(position: location.x, sizeForEachVerticalRow: self.sizeForEachVerticalRow, countOfRow: self.countOfRow)
+            let newRow = getRowByPosition(position: newPosition, sizeForEachVerticalRow: self.sizeForEachVerticalRow)
             //let action = SKAction.moveTo(newPosition, duration: 0.1)
-            let action = SKAction.moveToX(newPosition, duration: 0.1)
+            let action = SKAction.moveTo(x: newPosition, duration: 0.1)
 
             let oldRow = node.row.0
-            node.node.fillColor = SKColor.clearColor()
-            node.node.runAction(action, completion: {
+            node.node.fillColor = SKColor.clear
+            node.node.run(action, completion: {
                 let number = self.findCatchingNumber()
                 if number != -1 {
                     if GameViewController.sound {
-                        let sound = SKAction.playSoundFileNamed("swipe\(oldRow).wav", waitForCompletion: false)
-                        self.runAction(sound)
+                        let sound = SKAction.playSoundFileNamed("swipe\(oldRow).mp3", waitForCompletion: false)
+                        self.run(sound)
                     }
                     self.position.x = newPosition
                     GameScene.nextNumber[number].row = (newRow, newPosition)
@@ -409,12 +409,13 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     
     // **** sound ****
     func playSound (){
-      //  let url = Bundle.main.url(forResource: "intro+repeat.wav", withExtension: nil)
+        let url = Bundle.main.url(forResource: "intro+repeat.mp3", withExtension: nil)
      //   NSBundle.mainBundle().URLForResource(<#T##name: String?##String?#>, withExtension: <#T##String?#>)
-        let url =  NSBundle.mainBundle().URLForResource("intro+repeat.wav", withExtension: nil)
+      //  let url =  Bundle.main.url(forResource:"intro+repeat.mp3", withExtension: nil)
+
         var error: NSError? = nil
         do {
-            player = try AVAudioPlayer(contentsOfURL: url!)
+            player = try AVAudioPlayer(contentsOf: url!)
         } catch let error1 as NSError {
             error = error1
         }
@@ -429,14 +430,14 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool){
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
         if flag {
-           // let url = Bundle.main.url(forResource: "repeat.wav", withExtension: nil)
-             let url =  NSBundle.mainBundle().URLForResource("repeat.wav", withExtension: nil)
+            let url = Bundle.main.url(forResource: "repeat.mp3", withExtension: nil)
+          //   let url =  Bundle.main.urlForResource("repeat.mp3", withExtension: nil)
             
             var error: NSError? = nil
             do {
-                self.player = try AVAudioPlayer(contentsOfURL: url!)
+                self.player = try AVAudioPlayer(contentsOf: url!)
             } catch let error1 as NSError {
                 error = error1
             }

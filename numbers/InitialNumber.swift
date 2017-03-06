@@ -30,14 +30,14 @@ class InitailNumbers {
         self.secondLabelShape.position = CGPoint(x: x, y: sizeForEachVerticalRow)
     
     
-        self.firstLabel.horizontalAlignmentMode = .Center
-        self.firstLabel.verticalAlignmentMode = .Center
-        self.secondLabel.horizontalAlignmentMode = .Center
-        self.secondLabel.verticalAlignmentMode = .Center
+        self.firstLabel.horizontalAlignmentMode = .center
+        self.firstLabel.verticalAlignmentMode = .center
+        self.secondLabel.horizontalAlignmentMode = .center
+        self.secondLabel.verticalAlignmentMode = .center
         
         //self.secondLabelShape.path = UIBezierPath(roundedRect: CGRect(x: -sizeForEachVerticalRow / 2 + 2.5, y: -sizeForEachVerticalRow / 2, width: sizeForEachVerticalRow - 5, height: sizeForEachVerticalRow), cornerRadius: CGFloat(sizeForEachVerticalRow / 2)).cgPath
         
-        self.secondLabelShape.path = UIBezierPath(arcCenter: CGPointMake(0, 0), radius: sizeForEachVerticalRow / 2 - 2.5, startAngle: CGFloat(0), endAngle: CGFloat(-M_PI), clockwise: false).CGPath
+        self.secondLabelShape.path = UIBezierPath(arcCenter: CGPoint(x: 0, y:0), radius: sizeForEachVerticalRow / 2 - 2.5, startAngle: CGFloat(0), endAngle: CGFloat(-M_PI), clockwise: false).cgPath
         
         self.firstLabel.fontColor = UIColor(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
         self.secondLabel.fontColor = UIColor(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
@@ -57,8 +57,8 @@ class InitailNumbers {
     }
     
     func createNumbers() {
-        self.firstRowNumber = randomInt(-10, max: 10)
-        self.secondRowNumber = randomInt(-15, max: 15)
+        self.firstRowNumber = randomInt(min: -10, max: 10)
+        self.secondRowNumber = randomInt(min: -15, max: 15)
         if  self.firstRowNumber == self.secondRowNumber {
             if self.secondRowNumber == -15 {
                 self.secondRowNumber += 1
@@ -92,23 +92,23 @@ class InitailNumbers {
         self.secondLabel.text = String(self.secondRowNumber)
         if self.secondRowNumber > 15 || self.secondRowNumber < -15 {
             scene.over = true
-            scene.gameOver("Game Over")
+            scene.gameOver(text: "Game Over")
         } else if (self.secondRowNumber == self.firstRowNumber ){
             if GameViewController.sound {
-                scene.runAction(sound)
+                scene.run(sound)
             }
-            self.secondLabelShape.path = UIBezierPath(rect: CGRectMake(-sizeForEachVerticalRow / 2 + 2.5, -sizeForEachVerticalRow / 2, sizeForEachVerticalRow - 5, sizeForEachVerticalRow / 2)).CGPath
+            self.secondLabelShape.path = UIBezierPath(rect: CGRect(x: -sizeForEachVerticalRow / 2 + 2.5, y: -sizeForEachVerticalRow / 2, width: sizeForEachVerticalRow - 5, height: sizeForEachVerticalRow / 2)).cgPath
             
         } else if (self.secondRowNumber != self.firstRowNumber ){
-            self.secondLabelShape.path = UIBezierPath(arcCenter: CGPointMake(0, 0), radius: sizeForEachVerticalRow / 2 - 2.5, startAngle: CGFloat(0), endAngle: CGFloat(-M_PI), clockwise: false).CGPath
+            self.secondLabelShape.path = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: sizeForEachVerticalRow / 2 - 2.5, startAngle: CGFloat(0), endAngle: CGFloat(-M_PI), clockwise: false).cgPath
         }
         
         if victory() {
             if GameViewController.sound {
-                scene.runAction(sound)
+                scene.run(sound)
             }
             scene.over = true
-            scene.gameOver("Victory")
+            scene.gameOver(text: "Victory")
             
         }
     }

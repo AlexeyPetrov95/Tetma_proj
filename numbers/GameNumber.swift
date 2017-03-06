@@ -18,8 +18,8 @@ class GameNumber {
         self.label.name = "fallingNumberLabel"
       //  self.node.size = CGSize(width: 64, height: 64)
        // self.node.
-        self.node.strokeColor = SKColor.clearColor()
-        self.node.fillColor = SKColor.clearColor()
+        self.node.strokeColor = SKColor.clear
+        self.node.fillColor = SKColor.clear
         self.label.zPosition = 48
         self.node.zPosition = 49
     }
@@ -31,7 +31,7 @@ class GameNumber {
     
 
     func start(scene: GameScene) {
-        self.node.fallingAnimation(self.row, value: self.value, time: self.time, scene: scene)
+        self.node.fallingAnimation(row: self.row, value: self.value, time: self.time, scene: scene)
         scene.addChild(self.node)
     }
 }
