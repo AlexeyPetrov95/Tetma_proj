@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA739EC01E6D83EC00A74383 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA739EBF1E6D83EC00A74383 /* LevelScene.swift */; };
+		EA739EC21E6D843800A74383 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA739EC11E6D843800A74383 /* SettingsScene.swift */; };
+		EA739EC41E6D847700A74383 /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA739EC31E6D847700A74383 /* GeneralFunctions.swift */; };
+		EA739EC61E6D852A00A74383 /* AboutUsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA739EC51E6D852A00A74383 /* AboutUsScene.swift */; };
+		EA739EC81E6D855800A74383 /* BuyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA739EC71E6D855800A74383 /* BuyScene.swift */; };
 		EAE3D6F51E64510700DF7548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D6F41E64510700DF7548 /* AppDelegate.swift */; };
 		EAE3D6F71E64510700DF7548 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAE3D6F61E64510700DF7548 /* GameScene.sks */; };
 		EAE3D6F91E64510700DF7548 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAE3D6F81E64510700DF7548 /* Actions.sks */; };
@@ -38,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA739EBF1E6D83EC00A74383 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
+		EA739EC11E6D843800A74383 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
+		EA739EC31E6D847700A74383 /* GeneralFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
+		EA739EC51E6D852A00A74383 /* AboutUsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsScene.swift; path = ../AboutUsScene.swift; sourceTree = "<group>"; };
+		EA739EC71E6D855800A74383 /* BuyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuyScene.swift; path = ../BuyScene.swift; sourceTree = "<group>"; };
 		EAE3D6F11E64510700DF7548 /* Tetma_proj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetma_proj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE3D6F41E64510700DF7548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE3D6F61E64510700DF7548 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -105,10 +115,15 @@
 		EAE3D6F31E64510700DF7548 /* Tetma_proj */ = {
 			isa = PBXGroup;
 			children = (
+				EA739EC71E6D855800A74383 /* BuyScene.swift */,
+				EA739EC51E6D852A00A74383 /* AboutUsScene.swift */,
 				EAE3D6F41E64510700DF7548 /* AppDelegate.swift */,
 				EAE3D6F61E64510700DF7548 /* GameScene.sks */,
 				EAE3D6F81E64510700DF7548 /* Actions.sks */,
 				EAE3D6FA1E64510700DF7548 /* GameScene.swift */,
+				EA739EC11E6D843800A74383 /* SettingsScene.swift */,
+				EA739EC31E6D847700A74383 /* GeneralFunctions.swift */,
+				EA739EBF1E6D83EC00A74383 /* LevelScene.swift */,
 				EAE3D7281E6451A200DF7548 /* SKSceneExtension.swift */,
 				EAE3D6FC1E64510700DF7548 /* GameViewController.swift */,
 				EAE3D6FE1E64510700DF7548 /* Main.storyboard */,
@@ -276,7 +291,12 @@
 				EAE3D6FB1E64510700DF7548 /* GameScene.swift in Sources */,
 				EAE3D6FD1E64510700DF7548 /* GameViewController.swift in Sources */,
 				EAE3D7291E6451A200DF7548 /* SKSceneExtension.swift in Sources */,
+				EA739EC21E6D843800A74383 /* SettingsScene.swift in Sources */,
 				EAE3D6F51E64510700DF7548 /* AppDelegate.swift in Sources */,
+				EA739EC01E6D83EC00A74383 /* LevelScene.swift in Sources */,
+				EA739EC61E6D852A00A74383 /* AboutUsScene.swift in Sources */,
+				EA739EC81E6D855800A74383 /* BuyScene.swift in Sources */,
+				EA739EC41E6D847700A74383 /* GeneralFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +541,7 @@
 				EAE3D7211E64510700DF7548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAE3D7221E64510700DF7548 /* Build configuration list for PBXNativeTarget "Tetma_projTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +550,7 @@
 				EAE3D7241E64510700DF7548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAE3D7251E64510700DF7548 /* Build configuration list for PBXNativeTarget "Tetma_projUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +559,7 @@
 				EAE3D7271E64510700DF7548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

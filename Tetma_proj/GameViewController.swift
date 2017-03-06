@@ -33,6 +33,7 @@ class GameViewController: UIViewController {
             let skView = self.view as! SKView
             scene.size = skView.bounds.size
             scene.scaleMode = .aspectFill
+
             
 //            adBannerView = GADBannerView(frame: CGRect(x: 0, y: 0, width: self.view!.frame.width, height: 50))
 //            adBannerView.delegate = self

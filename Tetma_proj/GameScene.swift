@@ -25,11 +25,11 @@ class MenuScene: SKScene {
         
         let backgroundNode = SKSpriteNode(imageNamed: "background")
         backgroundNode.size = self.frame.size
-        backgroundNode.position = CGPoint(x: 0, y: 0)
+        backgroundNode.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         backgroundNode.zPosition = 0
         self.createMenuInScene(arrayOfValues: arrayOfValues, zPosition: 3)
         self.addChild(backgroundNode)
-        createSoundButton()
+//        createSoundButton()
 //        if interstitial.isReady && GameViewController.adBool.bool( forKey: "adBool") {
 //            //      interstitial.present(fromRootViewController: (self.view?.window?.rootViewController)!)
 //            interstitial.present(fromRootViewController: (self.view?.window?.rootViewController)!)
@@ -43,16 +43,16 @@ class MenuScene: SKScene {
             let location = touch.location(in: self)
             if self.atPoint(location).name == "Start_button" || self.atPoint(location).name == "Start_label" {
                 let btn = self.childNode(withName: "Start_button")
-             //   let scene = LevelScene(size: self.size)
-              //  presentNewScene(scene: scene, skView: skView, button: btn!)
+                let scene = LevelScene(size: self.size)
+                presentNewScene(scene: scene, skView: skView, button: btn!)
             } else if self.atPoint(location).name == "Settings_button" || self.atPoint(location).name == "Settings_label" {
                 let btn = self.childNode(withName: "Settings_button")
-               // let scene = SettingsScene(size: self.size)
-               // presentNewScene(scene: scene, skView: skView, button: btn!)
+                let scene = SettingsScene(size: self.size)
+                presentNewScene(scene: scene, skView: skView, button: btn!)
             } else if self.atPoint(location).name == "Buy_button" || self.atPoint(location).name == "Buy_label" {
                 let btn = self.childNode(withName: "Buy_button")
-                //let scene = BuyScene(size: self.size)
-               // presentNewScene(scene: scene, skView: skView, button: btn!)
+                let scene = BuyScene(size: self.size)
+                presentNewScene(scene: scene, skView: skView, button: btn!)
             } else if self.atPoint(location).name == "Sound_button" {
                 let soundButton = self.childNode(withName: "Sound_button") as! SKSpriteNode
                 if GameViewController.sound {
@@ -64,12 +64,12 @@ class MenuScene: SKScene {
                 }
             } else if self.atPoint(location).name == "About us_button" || self.atPoint(location).name == "About us_label"{
                 let btn = self.childNode(withName: "About us_button")
-               // let scene = AboutUsScene(size: self.size)
-               // presentNewScene(scene: scene, skView: skView, button: btn!)
+                let scene = AboutUsScene(size: self.size)
+                presentNewScene(scene: scene, skView: skView, button: btn!)
             } else if self.atPoint(location).name == "Tutorial_button" || self.atPoint(location).name == "Tutorial_label" {
                 let btn = self.childNode(withName: "About us_button")
-               // let scene = TutorialScene(size: self.size)
-               // presentNewScene(scene: scene, skView: skView, button: btn!)
+            //    let scene = TutorialScene(size: self.size)
+              //  presentNewScene(scene: scene, skView: skView, button: btn!)
             }
         }
     }
