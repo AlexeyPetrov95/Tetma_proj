@@ -1,5 +1,9 @@
 import SpriteKit
 
+/*
+ * Расширение объекта Node, каждому объекту можно добавить анимацию, взять узначение и удалить его
+ */
+
 extension SKNode {
     
     func fallingAnimation (row:(Int, CGFloat), value: Int, time: Double, scene: GameScene){

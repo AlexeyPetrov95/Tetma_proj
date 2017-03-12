@@ -1,3 +1,7 @@
+/*
+ *  Построение универсальных меню сцен. Принимает параметры название label и позиционирование первого элемента.
+ */
+
 import SpriteKit
 
 extension SKScene {
@@ -49,6 +53,7 @@ extension SKScene {
         }
     }
     
+    /* Удаляет меню со сцены  */
     func deleteMenuFromScene(arrayOfValues: [String]) {
         for element in arrayOfValues {
             let childButton = self.childNode(withName: "\(element)_button")
@@ -58,6 +63,7 @@ extension SKScene {
         }
     }
     
+    /* Создание кнопок */
     func createSoundButton () {
         let soundButton = SKSpriteNode()
         soundButton.size = CGSize(width: 24, height: 24)

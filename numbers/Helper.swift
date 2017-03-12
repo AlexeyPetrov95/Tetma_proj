@@ -1,3 +1,7 @@
+/*
+ *  HELPER - генерирует числа для строки, чтобы пользователь не проиграл и кидает его на рандомную полосу
+ */
+
 import SpriteKit
 
 class Helper: GameNumber {
@@ -18,12 +22,15 @@ class Helper: GameNumber {
         node.addChild(self.label)
     }
     
-    func randomDevider () -> Int {
+    func randomDivider () -> Int {
         let number = 2 + Int(arc4random_uniform(UInt32(5 - 1 + 2)))
         return number
     }
     
-    func getRowFotNextCorrectNumber (countOfRow: Int) -> Int { // тут через рандом
+    /*
+    *  Выбокра строки в которой нужна помощь, в которой легко проиграть
+    */
+    func getRowFotNextCorrectNumber (countOfRow: Int) -> Int {
         let randomRow = randomInt(min: 0, max: countOfRow - 1)
         if GameScene.arrayOfStartNumbers[randomRow].firstRowNumber != GameScene.arrayOfStartNumbers[randomRow].secondRowNumber {
             return randomRow
@@ -37,6 +44,10 @@ class Helper: GameNumber {
         return -1
     }
     
+    /*
+     *  Получаем значение для строки и делим его на рандомный знаминатель, чтобы не сразу заполнить строчку
+     */
+
     func getNextCorrectValue (prevNumber: (Int, Int)) -> Int {
         
         
@@ -55,8 +66,8 @@ class Helper: GameNumber {
             } else if ((firstValue - secondValue) >= -5 && (firstValue - secondValue) <= 5) && prevNumber.0 == self.rightRow.0 {
                 difference = firstValue - secondValue - prevNumber.1
             } else {
-                let devider = randomDevider()
-                difference = (firstValue - secondValue) / devider
+                let divider = randomDivider()
+                difference = (firstValue - secondValue) / divider
             }
         } else {
             if ((firstValue - secondValue) >= -5 && (firstValue - secondValue) <= 5) {
@@ -64,8 +75,8 @@ class Helper: GameNumber {
             } else if ((firstValue - secondValue) >= -5 && (firstValue - secondValue) <= 5) {
                 difference = firstValue - secondValue - prevNumber.1
             } else {
-                let devider = randomDevider()
-                difference = (firstValue - secondValue) / devider
+                let divider = randomDivider()
+                difference = (firstValue - secondValue) / divider
             }
         }
         return difference
