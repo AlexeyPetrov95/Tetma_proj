@@ -1,3 +1,7 @@
+/**
+ *  Инициализация и добавление падающих чисел, только UI
+ */
+
 import SpriteKit
 
 class FallingNumber: GameNumber {
