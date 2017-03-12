@@ -1,3 +1,6 @@
+/*
+ *  Обучающая сцена 
+ */
 import SpriteKit
 import UIKit
 import Foundation

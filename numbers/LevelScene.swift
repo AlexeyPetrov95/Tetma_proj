@@ -1,3 +1,6 @@
+/*
+ * Сцена уровней
+ */
 import SpriteKit
 
 class LevelScene: SKScene {

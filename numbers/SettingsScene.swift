@@ -1,3 +1,6 @@
+/*
+ * Сцена настроек
+ */
 import SpriteKit
 
 class SettingsScene: SKScene {

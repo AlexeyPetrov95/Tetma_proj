@@ -1,4 +1,6 @@
-
+/*
+ * Сцена покупки
+ */
 import SpriteKit
 import StoreKit
 

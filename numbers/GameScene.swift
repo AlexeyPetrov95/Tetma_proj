@@ -1,3 +1,7 @@
+/*
+ *  Вся игровая сцена тут
+ */
+
 import SpriteKit
 import AVFoundation
 import GoogleMobileAds
@@ -23,7 +27,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     var player = AVAudioPlayer()
     var over = false
     
-
+    // UI
     init(size: CGSize, countOfFallingNumbers: Int, fallingSpeed: Double, interval: Int, countOfRow: Int, level: String, timerForHelp: Int) {
         super.init(size: size)
        // self.isPaused = false
@@ -70,7 +74,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     let arrayOfValues = ["Main menu", "Resume", "Restart"]
     
   
-    
+    // Настройка сцены тут
     override func didMove(to view: SKView) {
         
         let backgroundNode = SKSpriteNode(imageNamed: "background")
@@ -133,6 +137,9 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         //createAndLoadInterstitial()
     }
     
+    /*
+    *   Загрузка рекламы
+    */
     private func createAndLoadInterstitial() {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9894820443925606/3042654572")
         let request = GADRequest()
@@ -149,6 +156,9 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         }
     }
     
+    /*
+     *   Создание строчек
+     */
     func createRow () {
         for i in 0 ..< self.countOfRow {
             let row = SKSpriteNode()
@@ -167,17 +177,25 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         }
     }
     
+    /*
+     *   Генерация след числа.
+     */
     func setNextFallingNumbers(){
         for _ in  0 ..< self.countOfFallingNumbers * 2 {
             GameScene.nextNumber.append(FallingNumber(scene: self))
         }
     }
     
+    /*
+     *   Переменные для helper'а - подсчет времени
+     */
     var help: Bool = false
     var helpTime: CFTimeInterval = 0
     var prevHeplNumber: (Int, Int) = (-1, 0)
     var intervalTime: CFTimeInterval = 0
   
+    
+    // setting up time for helper also generate the next number 
     override func update(_ currentTime: TimeInterval) {
         
         if !over {
@@ -221,12 +239,14 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         }
         
     }
-
+    
+    // Меню паузы генерация
     func getMenu() {
         self.addChild(menu)
         createMenuInScene(arrayOfValues: arrayOfValues, zPosition: 501)
     }
     
+    // Меню проигрыша генерация
     func gameOver (text: String) {
         createMenuInScene(arrayOfValues: ["Restart", "Main menu"], zPosition: 501)
         if GameViewController.sound {
@@ -251,6 +271,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         }
     }
     
+    // Удаления меню
     func hideMenu () {
         self.deleteMenuFromScene(arrayOfValues: arrayOfValues)
         if GameViewController.sound {
@@ -264,6 +285,10 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     var positionInArray: Int = 0
     var oldRow:Int = 0
     
+    
+    /*
+    *  УПРАВЛЕНИ TOUCH
+    */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if node == nil {
             let touch = touches.first!
@@ -317,6 +342,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         }
     }
     
+    // Получение строки захваченого числа
      func getNumberOnRow(row: Int) -> GameNumber? {
         var node: GameNumber? = nil
         var maxPosition = CGFloat(Int.max)
@@ -329,6 +355,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         return node
     }
 
+    // Получение самой nod'ы
     func findCatchingNumber () -> Int {
         for i in 0..<GameScene.nextNumber.count {
             if GameScene.nextNumber[i].catching {
@@ -338,7 +365,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         return -1
     }
     
-    
+    // Перемещение числа пока палец на экране
     override func touchesMoved(_ touches: Set<UITouch>, with wiwithEventvent: UIEvent?) { // заперт второго тача, подумать!
         if !self.isPaused {
             let touch = touches.first!
@@ -355,6 +382,7 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         }
     }
     
+    // Определение ближайшей строки и прилипание числа
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let newNumber = findCatchingNumber()
         if node != nil {

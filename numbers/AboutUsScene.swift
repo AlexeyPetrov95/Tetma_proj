@@ -1,4 +1,6 @@
-
+/*
+ * Сцена о нас
+ */
 import SpriteKit
 
 class AboutUsScene: SKScene {

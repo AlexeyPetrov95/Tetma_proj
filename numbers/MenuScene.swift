@@ -1,3 +1,6 @@
+/*
+ * Главная сцена меню
+ */
 import SpriteKit
 
 class StripeAnimation {
