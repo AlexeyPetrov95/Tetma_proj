@@ -1,4 +1,10 @@
 
+/*
+ 
+ Init the first scene, also we shoud init google ads and write in bundle
+ 
+*/
+
 
 import UIKit
 import SpriteKit
@@ -15,7 +21,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     static var adBool = UserDefaults.standard
 
 
-    
+    // google ads init
     func createAndLoadInterstitial() {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9894820443925606/3042654572")
         let request = GADRequest()
@@ -26,7 +32,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // setting up google ads in local storage
         GameViewController.adBool.set(true, forKey: "adBool")
         
         if let scene = MenuScene(fileNamed:"GameScene") {
@@ -34,6 +40,8 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
             scene.size = skView.bounds.size
             scene.scaleMode = .aspectFill
             
+            
+            // init google ads baner
             adBannerView = GADBannerView(frame: CGRect(x: 0, y: 0, width: self.view!.frame.width, height: 50))
             adBannerView.delegate = self
             adBannerView.rootViewController = self
@@ -51,12 +59,6 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
             adBannerView.isHidden = true
             
             skView.presentScene(scene)
-            
-            
- 
-            
-       
-            
            
         }
     

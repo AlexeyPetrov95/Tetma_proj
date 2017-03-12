@@ -1,3 +1,9 @@
+/*
+ *  Общие функции, в основном определение строк и положение node
+ */
+
+
+
 import SpriteKit
 import Foundation
 import SystemConfiguration
