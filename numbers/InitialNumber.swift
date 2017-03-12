@@ -1,3 +1,7 @@
+/**
+ *  Установка двух рядов нижних чисел и взаимодействие с ними
+ */
+
 import SpriteKit
 
 class InitailNumbers {
@@ -56,6 +60,9 @@ class InitailNumbers {
         scene.addChild(self.secondLabelShape)
     }
     
+    
+    
+    // Создание 2 рядов чисел
     func createNumbers() {
         self.firstRowNumber = randomInt(min: -10, max: 10)
         self.secondRowNumber = randomInt(min: -15, max: 15)
@@ -70,6 +77,8 @@ class InitailNumbers {
         }
     }
     
+    // Функция вызывает каждый раз когда числа падает на строчку
+    // Идет проверка на победу.
     func victory () -> Bool {
         var check = 0
         for i in 0..<GameScene.arrayOfStartNumbers.count {
@@ -85,8 +94,13 @@ class InitailNumbers {
         }
     }
     
+    // FIXME::SOUND INIT
     let sound = SKAction.playSoundFileNamed("numbers.wav", waitForCompletion: false)
     
+    
+    // FIXME:: need to be in the other file
+    // logic for sum numbers
+    // Обновление чисел в верхней строке при падении
     func refreshValue (fallingNumber: Int, scene: GameScene) {
         self.secondRowNumber += fallingNumber
         self.secondLabel.text = String(self.secondRowNumber)
@@ -109,7 +123,6 @@ class InitailNumbers {
             }
             scene.over = true
             scene.gameOver(text: "Victory")
-            
         }
     }
 }
